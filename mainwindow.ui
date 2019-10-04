@@ -1,0 +1,1719 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>720</width>
+    <height>480</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>720</width>
+    <height>480</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>720</width>
+    <height>480</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Password Manager</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color:#2A3439;</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QFrame" name="sideBar">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>161</width>
+      <height>481</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:#364C59;
+ border:none;</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QPushButton" name="testPasswordButton">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>70</y>
+       <width>161</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#testPasswordButton{
+	font: 13pt &quot;MS Sans Serif&quot;;
+	color:#23343F;
+	background:#96A8B2;
+	border:none;
+}
+
+#testPasswordButton:hover{
+	background:#364C59;
+	color:#D8E0E5;
+}</string>
+     </property>
+     <property name="text">
+      <string>Test Password</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="generatePasswordButton">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>140</y>
+       <width>161</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#generatePasswordButton{
+	font: 13pt &quot;MS Sans Serif&quot;;
+	color:#23343F;
+	background:#96A8B2;
+	border:none;
+}
+
+#generatePasswordButton:hover{
+	background:#364C59;
+	color:#D8E0E5;
+}</string>
+     </property>
+     <property name="text">
+      <string>Generate Password</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="viewPasswordsButton">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>280</y>
+       <width>161</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#viewPasswordsButton{
+	font: 13pt &quot;MS Sans Serif&quot;;
+	color:#23343F;
+	background:#96A8B2;
+	border:none;
+}
+
+#viewPasswordsButton:hover{
+	background:#1B2A33;
+	color:#D8E0E5;
+}</string>
+     </property>
+     <property name="text">
+      <string>View Passwords</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="welcomeLabel">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>161</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 10pt &quot;MS Sans Serif&quot;;
+color:#E2E8ED;
+background-color:#0C1419;
+border:none;
+padding:30px;</string>
+     </property>
+     <property name="text">
+      <string>Welcome User!</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="textEncryptionButton">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>210</y>
+       <width>161</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#textEncryptionButton{
+	font: 13pt &quot;MS Sans Serif&quot;;
+	color:#23343F;
+	background:#96A8B2;
+	border:none;
+}
+
+#textEncryptionButton:hover{
+	background:#1B2A33;
+	color:#D8E0E5;
+}</string>
+     </property>
+     <property name="text">
+      <string>Text Encryption</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="logoutButton">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>440</y>
+       <width>161</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#logoutButton{
+	font: 10pt &quot;MS Sans Serif&quot;;
+	color:#E2E8ED;
+	background-color:#2C404C;
+	border:none;
+	padding:30px;
+}
+
+#logoutButton:hover{
+	background:#0C1419;;
+	color:#D8E0E5;
+}</string>
+     </property>
+     <property name="text">
+      <string>Logout</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="testPasswordFrame">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>30</y>
+      <width>501</width>
+      <height>421</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLabel" name="testPassword_enterPassword_label">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>380</y>
+       <width>101</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 10pt &quot;MS Sans-Serif&quot;;
+color: #E2E8ED;</string>
+     </property>
+     <property name="text">
+      <string>Enter Password:</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="testPassword_enterPassword_button">
+     <property name="geometry">
+      <rect>
+       <x>399</x>
+       <y>380</y>
+       <width>91</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#testPassword_enterPassword_button{
+	font: 10pt &quot;MS Sans-Serif&quot;;
+	color: #E2E8ED;
+	background-color:#2C404C;
+	border:none;
+}
+#testPassword_enterPassword_button:hover{
+	background-color:#889AA5;
+	color:#0C1419;
+}</string>
+     </property>
+     <property name="text">
+      <string>Test</string>
+     </property>
+    </widget>
+    <widget class="QTextBrowser" name="testPassword_passwordCrackingProgressDisplay">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>481</width>
+       <height>301</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:#05090C;
+font: 10pt &quot;MS Sans-Serif&quot;;
+color:#E2E8ED;</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="testPassword_enterPassword_textEdit">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>380</y>
+       <width>281</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 10pt &quot;MS Sans-Serif&quot;;
+background-color:#E2E8ED;
+color:#05090C;</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="generatePasswordFrame">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>30</y>
+      <width>501</width>
+      <height>421</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QTextBrowser" name="generatePassword_generatedPassword_field">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>40</y>
+       <width>451</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:#D8E0E5;
+font: 10pt &quot;MS Sans-Serif&quot;;
+background-color:#0C1419;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="generatePassword_generatedPAsswordLabel">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>100</y>
+       <width>131</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 8pt &quot;MS Sans Serif&quot;;
+color:#C5D1D8;</string>
+     </property>
+     <property name="text">
+      <string>Generated Password</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="generatedPassword_lowerCaseLetters_checkbox">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>140</y>
+       <width>141</width>
+       <height>19</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 8pt &quot;MS Sans Serif&quot;;
+color:#C5D1D8;</string>
+     </property>
+     <property name="text">
+      <string>Lower Case Letters</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="generatedPassword_upperCaseLetters_checkbox">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>170</y>
+       <width>141</width>
+       <height>19</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 8pt &quot;MS Sans Serif&quot;;
+color:#C5D1D8;</string>
+     </property>
+     <property name="text">
+      <string>Upper Case Letters</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="generatedPassword_numbers_checkbox">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>200</y>
+       <width>81</width>
+       <height>19</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 8pt &quot;MS Sans Serif&quot;;
+color:#C5D1D8;</string>
+     </property>
+     <property name="text">
+      <string>Numbers</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="generatedPassword_specialCharacters_checkbox">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>230</y>
+       <width>141</width>
+       <height>19</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 8pt &quot;MS Sans Serif&quot;;
+color:#C5D1D8;</string>
+     </property>
+     <property name="text">
+      <string>Special Characters</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="generatePassword_service_label">
+     <property name="geometry">
+      <rect>
+       <x>250</x>
+       <y>140</y>
+       <width>51</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 8pt &quot;MS Sans Serif&quot;;
+color:#C5D1D8;</string>
+     </property>
+     <property name="text">
+      <string>Service:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="generatePassword_username_label">
+     <property name="geometry">
+      <rect>
+       <x>250</x>
+       <y>170</y>
+       <width>71</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 8pt &quot;MS Sans Serif&quot;;
+color:#C5D1D8;</string>
+     </property>
+     <property name="text">
+      <string>Username:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="generatePassword_email_label">
+     <property name="geometry">
+      <rect>
+       <x>250</x>
+       <y>200</y>
+       <width>41</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 8pt &quot;MS Sans Serif&quot;;
+color:#C5D1D8;</string>
+     </property>
+     <property name="text">
+      <string>Email:</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="generatePassword_savePAssword_button">
+     <property name="geometry">
+      <rect>
+       <x>250</x>
+       <y>230</y>
+       <width>231</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#generatePassword_savePAssword_button{
+	font: 10pt &quot;MS Sans-Serif&quot;;
+	color: #E2E8ED;
+	background-color:#2C404C;
+	border:none;
+}
+#generatePassword_savePAssword_button:hover{
+	background-color:#889AA5;
+	color:#0C1419;
+}</string>
+     </property>
+     <property name="text">
+      <string>Save Password</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="generatePassword_generatePassword_button">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>260</y>
+       <width>131</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#generatePassword_generatePassword_button{
+	font: 10pt &quot;MS Sans-Serif&quot;;
+	color: #E2E8ED;
+	background-color:#2C404C;
+	border:none;
+}
+#generatePassword_generatePassword_button:hover{
+	background-color:#889AA5;
+	color:#0C1419;
+}</string>
+     </property>
+     <property name="text">
+      <string>Generate Password</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="generatePassword_service_textEdit">
+     <property name="geometry">
+      <rect>
+       <x>330</x>
+       <y>140</y>
+       <width>151</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:#D8E0E5;
+background-color:#0C1419;</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="generatePassword_username_textEdit">
+     <property name="geometry">
+      <rect>
+       <x>330</x>
+       <y>170</y>
+       <width>151</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:#D8E0E5;
+background-color:#0C1419;</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="generatePassword_email_textEdit">
+     <property name="geometry">
+      <rect>
+       <x>330</x>
+       <y>200</y>
+       <width>151</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:#D8E0E5;
+background-color:#0C1419;</string>
+     </property>
+    </widget>
+    <widget class="QFrame" name="saveConfirmFrame">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>150</y>
+       <width>251</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:#748B99;</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QLabel" name="saveConfirmMessage">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>10</y>
+        <width>141</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 8pt &quot;MS Sans Serif&quot;;
+color:#23343F;
+text-align:center;</string>
+      </property>
+      <property name="text">
+       <string>Account Details Saved!</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="saveConfirmOkButton">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>40</y>
+        <width>131</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#saveConfirmOkButton{
+	font: 10pt &quot;MS Sans-Serif&quot;;
+	color: #E2E8ED;
+	background-color:#2C404C;
+	border:none;
+}
+#saveConfirmOkButton:hover{
+	background-color:#889AA5;
+	color:#0C1419;
+}</string>
+      </property>
+      <property name="text">
+       <string>OK</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="viewPasswordsFrame">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>30</y>
+      <width>501</width>
+      <height>421</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QFrame" name="viewPasswords_confirmed_frame">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>10</y>
+       <width>501</width>
+       <height>401</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QTableView" name="viewPasswords_accountsTable_table">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>20</y>
+        <width>501</width>
+        <height>361</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:#3c4043;
+color:#E2E8ED;
+font: 10pt &quot;MS Sans Serif&quot;;
+
+</string>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAsNeeded</enum>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QFrame" name="viewPasswordsConfirmationFrame">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>501</width>
+       <height>421</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QFrame" name="viewPasswords_confirmationAlert_frame">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>130</y>
+        <width>361</width>
+        <height>131</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:#748B99;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QLabel" name="viewPasswords_enterPassword_label">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>20</y>
+         <width>111</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 8pt &quot;MS Sans Serif&quot;;
+color:#23343F;</string>
+       </property>
+       <property name="text">
+        <string>Enter Password:</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="viewPasswords_enterPassword_button">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>70</y>
+         <width>301</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#viewPasswords_enterPassword_button{
+	font: 10pt &quot;MS Sans-Serif&quot;;
+	color: #E2E8ED;
+	background-color:#2C404C;
+	border:none;
+}
+#viewPasswords_enterPassword_button:hover{
+	background-color:#889AA5;
+	color:#0C1419;
+}</string>
+       </property>
+       <property name="text">
+        <string>Enter</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="viewPasswords_enterPasswordAuth_label">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>100</y>
+         <width>291</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 8pt &quot;MS Sans Serif&quot;;
+color:#23343F;
+text-align:center;</string>
+       </property>
+       <property name="text">
+        <string>Please re-enter your password for authentication</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="viewPasswords_enterPassword_field">
+       <property name="geometry">
+        <rect>
+         <x>130</x>
+         <y>20</y>
+         <width>201</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 8pt &quot;MS Sans Serif&quot;;
+color:#23343F;
+background-color:#D8E0E5;</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="textEncryptionFrame">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>30</y>
+      <width>501</width>
+      <height>421</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QPushButton" name="textEncryption_rot13_button">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>220</y>
+       <width>221</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#textEncryption_rot13_button{
+	font: 10pt &quot;MS Sans-Serif&quot;;
+	color: #E2E8ED;
+	background-color:#2C404C;
+	border:none;
+}
+#textEncryption_rot13_button:hover{
+	background-color:#889AA5;
+	color:#0C1419;
+}</string>
+     </property>
+     <property name="text">
+      <string>ROT13</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="textEncryption_octal_button">
+     <property name="geometry">
+      <rect>
+       <x>260</x>
+       <y>220</y>
+       <width>221</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#textEncryption_octal_button{
+	font: 10pt &quot;MS Sans-Serif&quot;;
+	color: #E2E8ED;
+	background-color:#2C404C;
+	border:none;
+}
+#textEncryption_octal_button:hover{
+	background-color:#889AA5;
+	color:#0C1419;
+}</string>
+     </property>
+     <property name="text">
+      <string>Octal</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="textEncryption_hex_button">
+     <property name="geometry">
+      <rect>
+       <x>260</x>
+       <y>290</y>
+       <width>221</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#textEncryption_hex_button{
+	font: 10pt &quot;MS Sans-Serif&quot;;
+	color: #E2E8ED;
+	background-color:#2C404C;
+	border:none;
+}
+#textEncryption_hex_button:hover{
+	background-color:#889AA5;
+	color:#0C1419;
+}</string>
+     </property>
+     <property name="text">
+      <string>Hex</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="textEncryption_binary_button">
+     <property name="geometry">
+      <rect>
+       <x>260</x>
+       <y>360</y>
+       <width>221</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#textEncryption_binary_button{
+	font: 10pt &quot;MS Sans-Serif&quot;;
+	color: #E2E8ED;
+	background-color:#2C404C;
+	border:none;
+}
+#textEncryption_binary_button:hover{
+	background-color:#889AA5;
+	color:#0C1419;
+}</string>
+     </property>
+     <property name="text">
+      <string>Binary</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="textEncryption_caesarCipher_button">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>290</y>
+       <width>221</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#textEncryption_caesarCipher_button{
+	font: 10pt &quot;MS Sans-Serif&quot;;
+	color: #E2E8ED;
+	background-color:#2C404C;
+	border:none;
+}
+#textEncryption_caesarCipher_button:hover{
+	background-color:#889AA5;
+	color:#0C1419;
+}</string>
+     </property>
+     <property name="text">
+      <string>Caesar Cipher</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="textEncryption_atbash_button">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>360</y>
+       <width>221</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#textEncryption_atbash_button{
+	font: 10pt &quot;MS Sans-Serif&quot;;
+	color: #E2E8ED;
+	background-color:#2C404C;
+	border:none;
+}
+#textEncryption_atbash_button:hover{
+	background-color:#889AA5;
+	color:#0C1419;
+}</string>
+     </property>
+     <property name="text">
+      <string>Atbash</string>
+     </property>
+    </widget>
+    <widget class="QFrame" name="textEncryptionROT13_frame">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>501</width>
+       <height>191</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QPushButton" name="textEncryption_encryptROT13_button">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>160</y>
+        <width>221</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#textEncryption_encryptROT13_button{
+	font: 10pt &quot;MS Sans-Serif&quot;;
+	color: #E2E8ED;
+	background-color:#2C404C;
+	border:none;
+}
+#textEncryption_encryptROT13_button:hover{
+	background-color:#889AA5;
+	color:#0C1419;
+}</string>
+      </property>
+      <property name="text">
+       <string>Encrypt</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="textEncryption_decryptROT13_button">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>160</y>
+        <width>221</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#textEncryption_decryptROT13_button{
+	font: 10pt &quot;MS Sans-Serif&quot;;
+	color: #E2E8ED;
+	background-color:#2C404C;
+	border:none;
+}
+#textEncryption_decryptROT13_button:hover{
+	background-color:#889AA5;
+	color:#0C1419;
+}</string>
+      </property>
+      <property name="text">
+       <string>Decrypt</string>
+      </property>
+     </widget>
+     <widget class="QTextBrowser" name="textEncryption_ROT13Out_field">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>10</y>
+        <width>461</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:#D8E0E5;
+background-color:#0C1419;</string>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="textEncryption_ROT13In_textEdit">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>90</y>
+        <width>461</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 10pt &quot;MS Sans-Serif&quot;;
+background-color:#E2E8ED;
+color:#05090C;</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QFrame" name="textEncryptionCaesarCipher_frame">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>501</width>
+       <height>201</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QPushButton" name="textEncryption_encryptCaesarCipher_button">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>160</y>
+        <width>221</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#textEncryption_encryptCaesarCipher_button{
+	font: 10pt &quot;MS Sans-Serif&quot;;
+	color: #E2E8ED;
+	background-color:#2C404C;
+	border:none;
+}
+#textEncryption_encryptCaesarCipher_button:hover{
+	background-color:#889AA5;
+	color:#0C1419;
+}</string>
+      </property>
+      <property name="text">
+       <string>Encrypt</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="textEncryption_decryptCaesarCipher_button">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>160</y>
+        <width>221</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#textEncryption_decryptCaesarCipher_button{
+	font: 10pt &quot;MS Sans-Serif&quot;;
+	color: #E2E8ED;
+	background-color:#2C404C;
+	border:none;
+}
+#textEncryption_decryptCaesarCipher_button:hover{
+	background-color:#889AA5;
+	color:#0C1419;
+}</string>
+      </property>
+      <property name="text">
+       <string>Decrypt</string>
+      </property>
+     </widget>
+     <widget class="QTextBrowser" name="textEncryption_caesarCipherOut_field">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>10</y>
+        <width>461</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:#D8E0E5;
+background-color:#0C1419;</string>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="textEncryption_caesarCipherIn_textEdit">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>90</y>
+        <width>401</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 10pt &quot;MS Sans-Serif&quot;;
+background-color:#E2E8ED;
+color:#05090C;</string>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="textEncryption_caesarCipherKeyIn_textEdit">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>90</y>
+        <width>51</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 10pt &quot;MS Sans-Serif&quot;;
+background-color:#E2E8ED;
+color:#05090C;</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QFrame" name="textEncryption_atbash_frame">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>501</width>
+       <height>201</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QPushButton" name="textEncryption_encryptAtbash_button">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>160</y>
+        <width>221</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#textEncryption_encryptAtbash_button{
+	font: 10pt &quot;MS Sans-Serif&quot;;
+	color: #E2E8ED;
+	background-color:#2C404C;
+	border:none;
+}
+#textEncryption_encryptAtbash_button:hover{
+	background-color:#889AA5;
+	color:#0C1419;
+}</string>
+      </property>
+      <property name="text">
+       <string>Encrypt</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="textEncryption_decryptAtbash_button">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>160</y>
+        <width>221</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#textEncryption_decryptAtbash_button{
+	font: 10pt &quot;MS Sans-Serif&quot;;
+	color: #E2E8ED;
+	background-color:#2C404C;
+	border:none;
+}
+#textEncryption_decryptAtbash_button:hover{
+	background-color:#889AA5;
+	color:#0C1419;
+}</string>
+      </property>
+      <property name="text">
+       <string>Decrypt</string>
+      </property>
+     </widget>
+     <widget class="QTextBrowser" name="textEncryption_atbashOut_field">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>10</y>
+        <width>461</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:#D8E0E5;
+background-color:#0C1419;</string>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="textEncryption_atbashIn_textEdit">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>90</y>
+        <width>461</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 10pt &quot;MS Sans-Serif&quot;;
+background-color:#E2E8ED;
+color:#05090C;</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QFrame" name="textEncryption_octal_frame">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>501</width>
+       <height>201</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QPushButton" name="textEncryption_encryptOctal_button">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>160</y>
+        <width>221</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#textEncryption_encryptOctal_button{
+	font: 10pt &quot;MS Sans-Serif&quot;;
+	color: #E2E8ED;
+	background-color:#2C404C;
+	border:none;
+}
+#textEncryption_encryptOctal_button:hover{
+	background-color:#889AA5;
+	color:#0C1419;
+}</string>
+      </property>
+      <property name="text">
+       <string>Encrypt</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="textEncryption_decryptOctal_button">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>160</y>
+        <width>221</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#textEncryption_decryptOctal_button{
+	font: 10pt &quot;MS Sans-Serif&quot;;
+	color: #E2E8ED;
+	background-color:#2C404C;
+	border:none;
+}
+#textEncryption_decryptOctal_button:hover{
+	background-color:#889AA5;
+	color:#0C1419;
+}</string>
+      </property>
+      <property name="text">
+       <string>Decrypt</string>
+      </property>
+     </widget>
+     <widget class="QTextBrowser" name="textEncryption_octalOut_field">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>10</y>
+        <width>461</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:#D8E0E5;
+background-color:#0C1419;</string>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="textEncryption_octalIn_textEdit">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>90</y>
+        <width>461</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 10pt &quot;MS Sans-Serif&quot;;
+background-color:#E2E8ED;
+color:#05090C;</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QFrame" name="textEncryption_hex_frame">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>501</width>
+       <height>201</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QPushButton" name="textEncryption_encryptHex_button">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>160</y>
+        <width>221</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#textEncryption_encryptHex_button{
+	font: 10pt &quot;MS Sans-Serif&quot;;
+	color: #E2E8ED;
+	background-color:#2C404C;
+	border:none;
+}
+#textEncryption_encryptHex_button:hover{
+	background-color:#889AA5;
+	color:#0C1419;
+}</string>
+      </property>
+      <property name="text">
+       <string>Encrypt</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="textEncryption_decryptHex_button">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>160</y>
+        <width>221</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#textEncryption_decryptHex_button{
+	font: 10pt &quot;MS Sans-Serif&quot;;
+	color: #E2E8ED;
+	background-color:#2C404C;
+	border:none;
+}
+#textEncryption_decryptHex_button:hover{
+	background-color:#889AA5;
+	color:#0C1419;
+}</string>
+      </property>
+      <property name="text">
+       <string>Decrypt</string>
+      </property>
+     </widget>
+     <widget class="QTextBrowser" name="textEncryption_hexOut_field">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>10</y>
+        <width>461</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:#D8E0E5;
+background-color:#0C1419;</string>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="textEncryption_hexIn_textEdit">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>90</y>
+        <width>461</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 10pt &quot;MS Sans-Serif&quot;;
+background-color:#E2E8ED;
+color:#05090C;</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QFrame" name="textEncryption_binary_frame">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>501</width>
+       <height>201</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QPushButton" name="textEncryption_encryptBinary_button">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>160</y>
+        <width>221</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#textEncryption_encryptBinary_button{
+	font: 10pt &quot;MS Sans-Serif&quot;;
+	color: #E2E8ED;
+	background-color:#2C404C;
+	border:none;
+}
+#textEncryption_encryptBinary_button:hover{
+	background-color:#889AA5;
+	color:#0C1419;
+}</string>
+      </property>
+      <property name="text">
+       <string>Encrypt</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="textEncryption_decryptBinary_button">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>160</y>
+        <width>221</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#textEncryption_decryptBinary_button{
+	font: 10pt &quot;MS Sans-Serif&quot;;
+	color: #E2E8ED;
+	background-color:#2C404C;
+	border:none;
+}
+#textEncryption_decryptBinary_button:hover{
+	background-color:#889AA5;
+	color:#0C1419;
+}</string>
+      </property>
+      <property name="text">
+       <string>Decrypt</string>
+      </property>
+     </widget>
+     <widget class="QTextBrowser" name="textEncryption_binaryOut_field">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>10</y>
+        <width>461</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:#D8E0E5;
+background-color:#0C1419;</string>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="textEncryption_binaryIn_textEdit">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>90</y>
+        <width>461</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 10pt &quot;MS Sans-Serif&quot;;
+background-color:#E2E8ED;
+color:#05090C;</string>
+      </property>
+     </widget>
+    </widget>
+    <zorder>textEncryption_rot13_button</zorder>
+    <zorder>textEncryption_octal_button</zorder>
+    <zorder>textEncryption_hex_button</zorder>
+    <zorder>textEncryption_binary_button</zorder>
+    <zorder>textEncryption_caesarCipher_button</zorder>
+    <zorder>textEncryption_atbash_button</zorder>
+    <zorder>textEncryptionROT13_frame</zorder>
+    <zorder>textEncryption_atbash_frame</zorder>
+    <zorder>textEncryption_binary_frame</zorder>
+    <zorder>textEncryption_hex_frame</zorder>
+    <zorder>textEncryption_octal_frame</zorder>
+    <zorder>textEncryptionCaesarCipher_frame</zorder>
+   </widget>
+   <widget class="QFrame" name="loginFrame">
+    <property name="geometry">
+     <rect>
+      <x>-1</x>
+      <y>0</y>
+      <width>721</width>
+      <height>481</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QFrame" name="login_frame">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>180</y>
+       <width>361</width>
+       <height>181</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:#748B99;</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QLabel" name="login_password_label">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>60</y>
+        <width>71</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 8pt &quot;MS Sans Serif&quot;;
+color:#23343F;</string>
+      </property>
+      <property name="text">
+       <string>Password:</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="login_login_button">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>110</y>
+        <width>301</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#login_login_button{
+	font: 10pt &quot;MS Sans-Serif&quot;;
+	color: #E2E8ED;
+	background-color:#2C404C;
+	border:none;
+}
+#login_login_button:hover{
+	background-color:#889AA5;
+	color:#0C1419;
+}</string>
+      </property>
+      <property name="text">
+       <string>Enter</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="login_authentication_label">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>140</y>
+        <width>271</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 8pt &quot;MS Sans Serif&quot;;
+color:#23343F;
+text-align:center;</string>
+      </property>
+      <property name="text">
+       <string>Welcome to Password Management System!</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="login_username_label">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>20</y>
+        <width>71</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 8pt &quot;MS Sans Serif&quot;;
+color:#23343F;</string>
+      </property>
+      <property name="text">
+       <string>Username:</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="login_enterUsername_field">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>20</y>
+        <width>231</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 8pt &quot;MS Sans Serif&quot;;
+color:#23343F;
+background-color:#D8E0E5;</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="login_enterPassword_field">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>60</y>
+        <width>231</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 8pt &quot;MS Sans Serif&quot;;
+color:#23343F;
+background-color:#D8E0E5;</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QLabel" name="loginTitle">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>100</y>
+       <width>521</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 30pt &quot;MS Sans Serif&quot;;
+color: #E2E8ED;</string>
+     </property>
+     <property name="text">
+      <string>Password Management System</string>
+     </property>
+    </widget>
+   </widget>
+   <zorder>textEncryptionFrame</zorder>
+   <zorder>testPasswordFrame</zorder>
+   <zorder>viewPasswordsFrame</zorder>
+   <zorder>sideBar</zorder>
+   <zorder>generatePasswordFrame</zorder>
+   <zorder>loginFrame</zorder>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
