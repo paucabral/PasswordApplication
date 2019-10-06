@@ -729,11 +729,13 @@ std::string textCaesarCipher(std::string text, int s)
 
               }
 
-              result=ch;
+              result+=ch;
 
             }
 
-            else result+=ch;
+            else {
+                result+=text[i];
+            }
         // apply transformation to each character
         // Encrypt Uppercase letters
 //        if (isupper(text[i]))
@@ -1091,6 +1093,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->generatePasswordFrame->hide();
     ui->viewPasswordsFrame->hide();
     ui->textEncryptionFrame->hide();
+
+    QString usernameLbl = QString::fromLocal8Bit(username.c_str());
+    ui->welcomeLabel->setText("Welcome " + usernameLbl + "!");
 
     ui->saveConfirmFrame->hide();
     ui->passwordCrackedNotif->hide();
@@ -1450,6 +1455,7 @@ void MainWindow::on_testPassword_enterPassword_button_clicked()
     }
     else{
         ui->testPassword_passwordCrackingProgressDisplay->setText("The program may take a while with the brute force due to exhaustive algorithm. This process depends on your CPU speed. Please wait or do other operations while the brute force algorithm runs in the background.");
+        ui->testPassword_passwordCrackingProgressDisplay->setAlignment(Qt::AlignJustify);
         std::string result=crackPassword(converted);
         QString resultQt = QString::fromLocal8Bit(result.c_str());
         ui->testPassword_passwordCrackingProgressDisplay->setText("PASSWORD CRACKED\n");
@@ -1460,85 +1466,85 @@ void MainWindow::on_testPassword_enterPassword_button_clicked()
 
 void MainWindow::on_generatePassword_generatePassword_button_clicked()
 {
-    QApplication::processEvents();
-    if(ui->generatedPassword_lowerCaseLetters_checkbox->isChecked()==true && ui->generatedPassword_upperCaseLetters_checkbox->isChecked()==false && ui->generatedPassword_numbers_checkbox->isChecked()==false && ui->generatedPassword_specialCharacters_checkbox->isChecked()==false){
-        std::string result=lowerCaseRandomString(32);
-        QString resultQt = QString::fromLocal8Bit(result.c_str());
-        ui->generatePassword_generatedPassword_field->setText(resultQt);
-    }
-    else if(ui->generatedPassword_lowerCaseLetters_checkbox->isChecked()==true && ui->generatedPassword_upperCaseLetters_checkbox->isChecked()==true && ui->generatedPassword_numbers_checkbox->isChecked()==false && ui->generatedPassword_specialCharacters_checkbox->isChecked()==false){
-        std::string result=allCaseRandomString(32);
-        QString resultQt = QString::fromLocal8Bit(result.c_str());
-        ui->generatePassword_generatedPassword_field->setText(resultQt);
-    }
-    else if(ui->generatedPassword_lowerCaseLetters_checkbox->isChecked()==true && ui->generatedPassword_upperCaseLetters_checkbox->isChecked()==false && ui->generatedPassword_numbers_checkbox->isChecked()==true && ui->generatedPassword_specialCharacters_checkbox->isChecked()==false){
-        std::string result=lowerCaseNumericRandomString(32);
-        QString resultQt = QString::fromLocal8Bit(result.c_str());
-        ui->generatePassword_generatedPassword_field->setText(resultQt);
-    }
-    else if(ui->generatedPassword_lowerCaseLetters_checkbox->isChecked()==true && ui->generatedPassword_upperCaseLetters_checkbox->isChecked()==false && ui->generatedPassword_numbers_checkbox->isChecked()==false && ui->generatedPassword_specialCharacters_checkbox->isChecked()==true){
-        std::string result=lowerCaseSpecialCharRandomString(32);
-        QString resultQt = QString::fromLocal8Bit(result.c_str());
-        ui->generatePassword_generatedPassword_field->setText(resultQt);
-    }
-    else if(ui->generatedPassword_lowerCaseLetters_checkbox->isChecked()==false && ui->generatedPassword_upperCaseLetters_checkbox->isChecked()==true && ui->generatedPassword_numbers_checkbox->isChecked()==false && ui->generatedPassword_specialCharacters_checkbox->isChecked()==false){
-        std::string result=upperCaseRandomString(32);
-        QString resultQt = QString::fromLocal8Bit(result.c_str());
-        ui->generatePassword_generatedPassword_field->setText(resultQt);
-    }
-    else if(ui->generatedPassword_lowerCaseLetters_checkbox->isChecked()==false && ui->generatedPassword_upperCaseLetters_checkbox->isChecked()==true && ui->generatedPassword_numbers_checkbox->isChecked()==true && ui->generatedPassword_specialCharacters_checkbox->isChecked()==false){
-        std::string result=upperCaseNumericRandomString(32);
-        QString resultQt = QString::fromLocal8Bit(result.c_str());
-        ui->generatePassword_generatedPassword_field->setText(resultQt);
-    }
-    else if(ui->generatedPassword_lowerCaseLetters_checkbox->isChecked()==false && ui->generatedPassword_upperCaseLetters_checkbox->isChecked()==true && ui->generatedPassword_numbers_checkbox->isChecked()==false && ui->generatedPassword_specialCharacters_checkbox->isChecked()==true){
-        std::string result=upperCaseSpecialCharRandomString(32);
-        QString resultQt = QString::fromLocal8Bit(result.c_str());
-        ui->generatePassword_generatedPassword_field->setText(resultQt);
-    }
-    else if(ui->generatedPassword_lowerCaseLetters_checkbox->isChecked()==false && ui->generatedPassword_upperCaseLetters_checkbox->isChecked()==false && ui->generatedPassword_numbers_checkbox->isChecked()==true && ui->generatedPassword_specialCharacters_checkbox->isChecked()==true){
-        std::string result=numericSpecialCharRandomString(32);
-        QString resultQt = QString::fromLocal8Bit(result.c_str());
-        ui->generatePassword_generatedPassword_field->setText(resultQt);
-    }
-    else if(ui->generatedPassword_lowerCaseLetters_checkbox->isChecked()==false && ui->generatedPassword_upperCaseLetters_checkbox->isChecked()==false && ui->generatedPassword_numbers_checkbox->isChecked()==false && ui->generatedPassword_specialCharacters_checkbox->isChecked()==true){
-        std::string result=specialCharRandomString(32);
-        QString resultQt = QString::fromLocal8Bit(result.c_str());
-        ui->generatePassword_generatedPassword_field->setText(resultQt);
-    }
-    else if(ui->generatedPassword_lowerCaseLetters_checkbox->isChecked()==false && ui->generatedPassword_upperCaseLetters_checkbox->isChecked()==false && ui->generatedPassword_numbers_checkbox->isChecked()==true && ui->generatedPassword_specialCharacters_checkbox->isChecked()==false){
-        std::string result=numericRandomString(32);
-        QString resultQt = QString::fromLocal8Bit(result.c_str());
-        ui->generatePassword_generatedPassword_field->setText(resultQt);
-    }
-    else if(ui->generatedPassword_lowerCaseLetters_checkbox->isChecked()==true && ui->generatedPassword_upperCaseLetters_checkbox->isChecked()==true && ui->generatedPassword_numbers_checkbox->isChecked()==true && ui->generatedPassword_specialCharacters_checkbox->isChecked()==true){
-        std::string result=completeRandomString(32);
-        QString resultQt = QString::fromLocal8Bit(result.c_str());
-        ui->generatePassword_generatedPassword_field->setText(resultQt);
-    }
-    else if(ui->generatedPassword_lowerCaseLetters_checkbox->isChecked()==true && ui->generatedPassword_upperCaseLetters_checkbox->isChecked()==true && ui->generatedPassword_numbers_checkbox->isChecked()==false && ui->generatedPassword_specialCharacters_checkbox->isChecked()==true){
-        std::string result=allCaseSpecialCharRandomString(32);
-        QString resultQt = QString::fromLocal8Bit(result.c_str());
-        ui->generatePassword_generatedPassword_field->setText(resultQt);
-    }
-    else if(ui->generatedPassword_lowerCaseLetters_checkbox->isChecked()==true && ui->generatedPassword_upperCaseLetters_checkbox->isChecked()==true && ui->generatedPassword_numbers_checkbox->isChecked()==true && ui->generatedPassword_specialCharacters_checkbox->isChecked()==false){
-        std::string result=allCaseNumericRandomString(32);
-        QString resultQt = QString::fromLocal8Bit(result.c_str());
-        ui->generatePassword_generatedPassword_field->setText(resultQt);
-    }
-    else if(ui->generatedPassword_lowerCaseLetters_checkbox->isChecked()==false && ui->generatedPassword_upperCaseLetters_checkbox->isChecked()==true && ui->generatedPassword_numbers_checkbox->isChecked()==true && ui->generatedPassword_specialCharacters_checkbox->isChecked()==true){
-        std::string result=upperCaseNumericSpecialCharRandomString(32);
-        QString resultQt = QString::fromLocal8Bit(result.c_str());
-        ui->generatePassword_generatedPassword_field->setText(resultQt);
-    }
-    else if(ui->generatedPassword_lowerCaseLetters_checkbox->isChecked()==true && ui->generatedPassword_upperCaseLetters_checkbox->isChecked()==false && ui->generatedPassword_numbers_checkbox->isChecked()==true && ui->generatedPassword_specialCharacters_checkbox->isChecked()==true){
-        std::string result=lowerCaseNumericSpecialCharRandomString(32);
-        QString resultQt = QString::fromLocal8Bit(result.c_str());
-        ui->generatePassword_generatedPassword_field->setText(resultQt);
-    }
-    else if(ui->generatedPassword_lowerCaseLetters_checkbox->isChecked()==false && ui->generatedPassword_upperCaseLetters_checkbox->isChecked()==false && ui->generatedPassword_numbers_checkbox->isChecked()==false && ui->generatedPassword_specialCharacters_checkbox->isChecked()==false){
-        ui->generatePassword_generatedPassword_field->setText("");
-    }
+        QApplication::processEvents();
+        if(ui->generatedPassword_lowerCaseLetters_checkbox->isChecked()==true && ui->generatedPassword_upperCaseLetters_checkbox->isChecked()==false && ui->generatedPassword_numbers_checkbox->isChecked()==false && ui->generatedPassword_specialCharacters_checkbox->isChecked()==false){
+            std::string result=lowerCaseRandomString(32);
+            QString resultQt = QString::fromLocal8Bit(result.c_str());
+            ui->generatePassword_generatedPassword_field->setText(resultQt);
+        }
+        else if(ui->generatedPassword_lowerCaseLetters_checkbox->isChecked()==true && ui->generatedPassword_upperCaseLetters_checkbox->isChecked()==true && ui->generatedPassword_numbers_checkbox->isChecked()==false && ui->generatedPassword_specialCharacters_checkbox->isChecked()==false){
+            std::string result=allCaseRandomString(32);
+            QString resultQt = QString::fromLocal8Bit(result.c_str());
+            ui->generatePassword_generatedPassword_field->setText(resultQt);
+        }
+        else if(ui->generatedPassword_lowerCaseLetters_checkbox->isChecked()==true && ui->generatedPassword_upperCaseLetters_checkbox->isChecked()==false && ui->generatedPassword_numbers_checkbox->isChecked()==true && ui->generatedPassword_specialCharacters_checkbox->isChecked()==false){
+            std::string result=lowerCaseNumericRandomString(32);
+            QString resultQt = QString::fromLocal8Bit(result.c_str());
+            ui->generatePassword_generatedPassword_field->setText(resultQt);
+        }
+        else if(ui->generatedPassword_lowerCaseLetters_checkbox->isChecked()==true && ui->generatedPassword_upperCaseLetters_checkbox->isChecked()==false && ui->generatedPassword_numbers_checkbox->isChecked()==false && ui->generatedPassword_specialCharacters_checkbox->isChecked()==true){
+            std::string result=lowerCaseSpecialCharRandomString(32);
+            QString resultQt = QString::fromLocal8Bit(result.c_str());
+            ui->generatePassword_generatedPassword_field->setText(resultQt);
+        }
+        else if(ui->generatedPassword_lowerCaseLetters_checkbox->isChecked()==false && ui->generatedPassword_upperCaseLetters_checkbox->isChecked()==true && ui->generatedPassword_numbers_checkbox->isChecked()==false && ui->generatedPassword_specialCharacters_checkbox->isChecked()==false){
+            std::string result=upperCaseRandomString(32);
+            QString resultQt = QString::fromLocal8Bit(result.c_str());
+            ui->generatePassword_generatedPassword_field->setText(resultQt);
+        }
+        else if(ui->generatedPassword_lowerCaseLetters_checkbox->isChecked()==false && ui->generatedPassword_upperCaseLetters_checkbox->isChecked()==true && ui->generatedPassword_numbers_checkbox->isChecked()==true && ui->generatedPassword_specialCharacters_checkbox->isChecked()==false){
+            std::string result=upperCaseNumericRandomString(32);
+            QString resultQt = QString::fromLocal8Bit(result.c_str());
+            ui->generatePassword_generatedPassword_field->setText(resultQt);
+        }
+        else if(ui->generatedPassword_lowerCaseLetters_checkbox->isChecked()==false && ui->generatedPassword_upperCaseLetters_checkbox->isChecked()==true && ui->generatedPassword_numbers_checkbox->isChecked()==false && ui->generatedPassword_specialCharacters_checkbox->isChecked()==true){
+            std::string result=upperCaseSpecialCharRandomString(32);
+            QString resultQt = QString::fromLocal8Bit(result.c_str());
+            ui->generatePassword_generatedPassword_field->setText(resultQt);
+        }
+        else if(ui->generatedPassword_lowerCaseLetters_checkbox->isChecked()==false && ui->generatedPassword_upperCaseLetters_checkbox->isChecked()==false && ui->generatedPassword_numbers_checkbox->isChecked()==true && ui->generatedPassword_specialCharacters_checkbox->isChecked()==true){
+            std::string result=numericSpecialCharRandomString(32);
+            QString resultQt = QString::fromLocal8Bit(result.c_str());
+            ui->generatePassword_generatedPassword_field->setText(resultQt);
+        }
+        else if(ui->generatedPassword_lowerCaseLetters_checkbox->isChecked()==false && ui->generatedPassword_upperCaseLetters_checkbox->isChecked()==false && ui->generatedPassword_numbers_checkbox->isChecked()==false && ui->generatedPassword_specialCharacters_checkbox->isChecked()==true){
+            std::string result=specialCharRandomString(32);
+            QString resultQt = QString::fromLocal8Bit(result.c_str());
+            ui->generatePassword_generatedPassword_field->setText(resultQt);
+        }
+        else if(ui->generatedPassword_lowerCaseLetters_checkbox->isChecked()==false && ui->generatedPassword_upperCaseLetters_checkbox->isChecked()==false && ui->generatedPassword_numbers_checkbox->isChecked()==true && ui->generatedPassword_specialCharacters_checkbox->isChecked()==false){
+            std::string result=numericRandomString(32);
+            QString resultQt = QString::fromLocal8Bit(result.c_str());
+            ui->generatePassword_generatedPassword_field->setText(resultQt);
+        }
+        else if(ui->generatedPassword_lowerCaseLetters_checkbox->isChecked()==true && ui->generatedPassword_upperCaseLetters_checkbox->isChecked()==true && ui->generatedPassword_numbers_checkbox->isChecked()==true && ui->generatedPassword_specialCharacters_checkbox->isChecked()==true){
+            std::string result=completeRandomString(32);
+            QString resultQt = QString::fromLocal8Bit(result.c_str());
+            ui->generatePassword_generatedPassword_field->setText(resultQt);
+        }
+        else if(ui->generatedPassword_lowerCaseLetters_checkbox->isChecked()==true && ui->generatedPassword_upperCaseLetters_checkbox->isChecked()==true && ui->generatedPassword_numbers_checkbox->isChecked()==false && ui->generatedPassword_specialCharacters_checkbox->isChecked()==true){
+            std::string result=allCaseSpecialCharRandomString(32);
+            QString resultQt = QString::fromLocal8Bit(result.c_str());
+            ui->generatePassword_generatedPassword_field->setText(resultQt);
+        }
+        else if(ui->generatedPassword_lowerCaseLetters_checkbox->isChecked()==true && ui->generatedPassword_upperCaseLetters_checkbox->isChecked()==true && ui->generatedPassword_numbers_checkbox->isChecked()==true && ui->generatedPassword_specialCharacters_checkbox->isChecked()==false){
+            std::string result=allCaseNumericRandomString(32);
+            QString resultQt = QString::fromLocal8Bit(result.c_str());
+            ui->generatePassword_generatedPassword_field->setText(resultQt);
+        }
+        else if(ui->generatedPassword_lowerCaseLetters_checkbox->isChecked()==false && ui->generatedPassword_upperCaseLetters_checkbox->isChecked()==true && ui->generatedPassword_numbers_checkbox->isChecked()==true && ui->generatedPassword_specialCharacters_checkbox->isChecked()==true){
+            std::string result=upperCaseNumericSpecialCharRandomString(32);
+            QString resultQt = QString::fromLocal8Bit(result.c_str());
+            ui->generatePassword_generatedPassword_field->setText(resultQt);
+        }
+        else if(ui->generatedPassword_lowerCaseLetters_checkbox->isChecked()==true && ui->generatedPassword_upperCaseLetters_checkbox->isChecked()==false && ui->generatedPassword_numbers_checkbox->isChecked()==true && ui->generatedPassword_specialCharacters_checkbox->isChecked()==true){
+            std::string result=lowerCaseNumericSpecialCharRandomString(32);
+            QString resultQt = QString::fromLocal8Bit(result.c_str());
+            ui->generatePassword_generatedPassword_field->setText(resultQt);
+        }
+        else if(ui->generatedPassword_lowerCaseLetters_checkbox->isChecked()==false && ui->generatedPassword_upperCaseLetters_checkbox->isChecked()==false && ui->generatedPassword_numbers_checkbox->isChecked()==false && ui->generatedPassword_specialCharacters_checkbox->isChecked()==false){
+            ui->generatePassword_generatedPassword_field->setText("");
+        }
     ui->generatePassword_generatedPassword_field->setAlignment(Qt::AlignCenter);
 }
 
@@ -1560,7 +1566,11 @@ void MainWindow::on_login_login_button_clicked()
 }
 
 void MainWindow::on_generatePassword_savePAssword_button_clicked()
-{
+{   if(ui->generatePassword_generatedPassword_field->document()->isEmpty() || ui->generatePassword_username_textEdit->text().isEmpty() || ui->generatePassword_email_textEdit->text().isEmpty()){
+        ui->generatePassword_generatedPassword_field->setText("Please fill out all the necessary fields. Make sure a password is generated before saving.");
+        ui->generatePassword_generatedPassword_field->setAlignment(Qt::AlignCenter);
+    }
+    else{
     QString generatePassword_generatedPassword_fieldText =  ui->generatePassword_generatedPassword_field->toPlainText();
     std::string generatePassword=generatePassword_generatedPassword_fieldText.toStdString();
 
@@ -1581,7 +1591,7 @@ void MainWindow::on_generatePassword_savePAssword_button_clicked()
     ui->generatePassword_email_textEdit->clear();
 
     ui->saveConfirmFrame->show();
-
+    }
 }
 
 void MainWindow::on_logoutButton_clicked()

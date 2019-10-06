@@ -1769,11 +1769,11 @@ text-align:center;</string>
    </widget>
    <zorder>viewPasswordsFrame</zorder>
    <zorder>sideBar</zorder>
-   <zorder>generatePasswordFrame</zorder>
    <zorder>textEncryptionFrame</zorder>
    <zorder>loginFrame</zorder>
    <zorder>testPasswordFrame</zorder>
    <zorder>passwordCrackedNotif</zorder>
+   <zorder>generatePasswordFrame</zorder>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
