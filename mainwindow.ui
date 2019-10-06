@@ -845,7 +845,7 @@ background-color:#D8E0E5;</string>
 }</string>
      </property>
      <property name="text">
-      <string>Octal</string>
+      <string>Decimal</string>
      </property>
     </widget>
     <widget class="QPushButton" name="textEncryption_hex_button">
@@ -1705,12 +1705,75 @@ color: #E2E8ED;</string>
      </property>
     </widget>
    </widget>
-   <zorder>textEncryptionFrame</zorder>
-   <zorder>testPasswordFrame</zorder>
+   <widget class="QFrame" name="passwordCrackedNotif">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>180</y>
+      <width>241</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:#748B99;</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLabel" name="passwordCrackedNotifLabel">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>10</y>
+       <width>121</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 8pt &quot;MS Sans Serif&quot;;
+color:#23343F;
+text-align:center;</string>
+     </property>
+     <property name="text">
+      <string>Password Cracked!</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="passwordCrackedOkButton">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>30</y>
+       <width>141</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#passwordCrackedOkButton{
+	font: 10pt &quot;MS Sans-Serif&quot;;
+	color: #E2E8ED;
+	background-color:#2C404C;
+	border:none;
+}
+#passwordCrackedOkButton:hover{
+	background-color:#889AA5;
+	color:#0C1419;
+}</string>
+     </property>
+     <property name="text">
+      <string>OK</string>
+     </property>
+    </widget>
+   </widget>
    <zorder>viewPasswordsFrame</zorder>
    <zorder>sideBar</zorder>
    <zorder>generatePasswordFrame</zorder>
+   <zorder>textEncryptionFrame</zorder>
    <zorder>loginFrame</zorder>
+   <zorder>testPasswordFrame</zorder>
+   <zorder>passwordCrackedNotif</zorder>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>

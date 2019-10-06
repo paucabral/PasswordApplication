@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QStandardItemModel>
+#include <QtCore>
 
 namespace Ui {
 class MainWindow;
@@ -74,6 +75,8 @@ private slots:
     void on_logoutButton_clicked();
 
     void on_saveConfirmOkButton_clicked();
+
+    void on_passwordCrackedOkButton_clicked();
 
 private:
     Ui::MainWindow *ui;

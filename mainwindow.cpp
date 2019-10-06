@@ -24,6 +24,8 @@
 #include <vector>
 #include <fstream>
 #include <ios>
+#include <QtCore>
+#include <QApplication>
 
 //GitControl
 //Account
@@ -327,13 +329,14 @@ clock_t start_t, end_t;
 std::string crackPassword(std::string pass){
     int digit[7],alphabetSet=1,passwordLength=1;
     start_t = clock();
-
-    std::string test,alphabet = "1337 also daktari is pro";
+    QApplication::processEvents();
+    std::string test,alphabet;
     while(1){
 
             switch(passwordLength){
                 case 1:
                 while(alphabetSet<5){
+                    QApplication::processEvents();
                                     switch(alphabetSet){
                                         case 1 : alphabet = "-0123456789";
                                                  std::cout << std::endl << std::endl <<"Testing only digits(0123456789) - 10 Characters, please wait";  break;
@@ -347,10 +350,13 @@ std::string crackPassword(std::string pass){
 
                     for(digit[0]=1;digit[0]<alphabet.length();digit[0]++){
                                                     attempt++;
+//                                                    QApplication::processEvents();
                                                     if(attempt%2500000==0) std::cout << ".";
                                                     test=alphabet[digit[0]];
-                                                    for(int i=1;i<passwordLength;i++)
+                                                    for(int i=1;i<passwordLength;i++){
+//                                                        QApplication::processEvents();
                                                         if(alphabet[digit[i]]!='-')test+=alphabet[digit[i]];
+                                                    }
                                                     if(pass.compare(test)==0){end_t = clock(); std::stringstream s; s<<"Password cracked: "<<test<<std::endl<<"Completion time: "<<(double)(end_t - start_t)/1000<<" seconds"<<std::endl<< "Number of attempts : " << attempt << std::endl ; return s.str();}
                                                     }
                                                     alphabetSet++;
@@ -359,6 +365,7 @@ std::string crackPassword(std::string pass){
                 case 2:
                     alphabetSet=1;
                     while(alphabetSet<9){
+                        QApplication::processEvents();
                                         switch(alphabetSet){
                                             case 1 : alphabet = "-0123456789";
                                                      std::cout << std::endl << std::endl <<"Testing only digits(0123456789) - 10 Characters, please wait";  break;
@@ -382,11 +389,13 @@ std::string crackPassword(std::string pass){
 
                          for(digit[1]=0;digit[1]<alphabet.length();digit[1]++)
                              for(digit[0]=1;digit[0]<alphabet.length();digit[0]++){
+                                 QApplication::processEvents();
                                                     attempt++;
                                                     if(attempt%2500000==0) std::cout << ".";
                                                     test=alphabet[digit[0]];
-                                                    for(int i=1;i<passwordLength;i++)
-                                                        if(alphabet[digit[i]]!='-')test+=alphabet[digit[i]];
+                                                    for(int i=1;i<passwordLength;i++){
+                                                        QApplication::processEvents();
+                                                        if(alphabet[digit[i]]!='-')test+=alphabet[digit[i]];}
                                                     if(pass.compare(test)==0){end_t = clock(); std::stringstream s; s<<"Password cracked: "<<test<<std::endl<<"Completion time: "<<(double)(end_t - start_t)/1000<<" seconds"<<std::endl<< "Number of attempts : " << attempt << std::endl ; return s.str();}
                                                     }
                                                     alphabetSet++;
@@ -395,6 +404,7 @@ std::string crackPassword(std::string pass){
                 case 3:
                     alphabetSet=1;
                     while(alphabetSet<11){
+                        QApplication::processEvents();
                                         switch(alphabetSet){
                                             case 1 : alphabet = "-0123456789";
                                                      std::cout << std::endl << std::endl <<"Testing only digits(0123456789) - 10 Characters, please wait";  break;
@@ -420,11 +430,13 @@ std::string crackPassword(std::string pass){
                                         for(digit[2]=0;digit[2]<alphabet.length();digit[2]++)
                                             for(digit[1]=0;digit[1]<alphabet.length();digit[1]++)
                                                 for(digit[0]=1;digit[0]<alphabet.length();digit[0]++){
+                                                    QApplication::processEvents();
                                                     attempt++;
                                                     if(attempt%2500000==0) std::cout << ".";
                                                     test=alphabet[digit[0]];
-                                                    for(int i=1;i<passwordLength;i++)
-                                                        if(alphabet[digit[i]]!='-')test+=alphabet[digit[i]];
+                                                    for(int i=1;i<passwordLength;i++){
+                                                        QApplication::processEvents();
+                                                        if(alphabet[digit[i]]!='-')test+=alphabet[digit[i]];}
                                                     if(pass.compare(test)==0){end_t = clock(); std::stringstream s; s<<"Password cracked: "<<test<<std::endl<<"Completion time: "<<(double)(end_t - start_t)/1000<<" seconds"<<std::endl<< "Number of attempts : " << attempt << std::endl ; return s.str();}
                                                     }
                                                     alphabetSet++;
@@ -433,6 +445,7 @@ std::string crackPassword(std::string pass){
                 case 4:
                     alphabetSet=1;
                     while(alphabetSet<11){
+                        QApplication::processEvents();
                                         switch(alphabetSet){
                                             case 1 : alphabet = "-0123456789";
                                                      std::cout << std::endl << std::endl <<"Testing only digits(0123456789) - 10 Characters, please wait";  break;
@@ -459,11 +472,13 @@ std::string crackPassword(std::string pass){
                                         for(digit[2]=0;digit[2]<alphabet.length();digit[2]++)
                                             for(digit[1]=0;digit[1]<alphabet.length();digit[1]++)
                                                 for(digit[0]=1;digit[0]<alphabet.length();digit[0]++){
+                                                    QApplication::processEvents();
                                                     attempt++;
                                                     if(attempt%2500000==0) std::cout << ".";
                                                     test=alphabet[digit[0]];
-                                                    for(int i=1;i<passwordLength;i++)
-                                                        if(alphabet[digit[i]]!='-')test+=alphabet[digit[i]];
+                                                    for(int i=1;i<passwordLength;i++){
+                                                        QApplication::processEvents();
+                                                        if(alphabet[digit[i]]!='-')test+=alphabet[digit[i]];}
                                                     if(pass.compare(test)==0){end_t = clock(); std::stringstream s; s<<"Password cracked: "<<test<<std::endl<<"Completion time: "<<(double)(end_t - start_t)/1000<<" seconds"<<std::endl<< "Number of attempts : " << attempt << std::endl ; return s.str();}
                                                     }
                                                     alphabetSet++;
@@ -472,6 +487,7 @@ std::string crackPassword(std::string pass){
                 case 5:
                     alphabetSet=1;
                     while(alphabetSet<11){
+                        QApplication::processEvents();
                                         switch(alphabetSet){
                                             case 1 : alphabet = "-0123456789";
                                                      std::cout << std::endl << std::endl <<"Testing only digits(0123456789) - 10 Characters, please wait";  break;
@@ -499,11 +515,13 @@ std::string crackPassword(std::string pass){
                                         for(digit[2]=0;digit[2]<alphabet.length();digit[2]++)
                                             for(digit[1]=0;digit[1]<alphabet.length();digit[1]++)
                                                 for(digit[0]=1;digit[0]<alphabet.length();digit[0]++){
+                                                    QApplication::processEvents();
                                                     attempt++;
                                                     if(attempt%2500000==0) std::cout << ".";
                                                     test=alphabet[digit[0]];
-                                                    for(int i=1;i<passwordLength;i++)
-                                                        if(alphabet[digit[i]]!='-')test+=alphabet[digit[i]];
+                                                    for(int i=1;i<passwordLength;i++){
+                                                        QApplication::processEvents();
+                                                        if(alphabet[digit[i]]!='-')test+=alphabet[digit[i]];}
                                                     if(pass.compare(test)==0){end_t = clock(); std::stringstream s; s<<"Password cracked: "<<test<<std::endl<<"Completion time: "<<(double)(end_t - start_t)/1000<<" seconds"<<std::endl<< "Number of attempts : " << attempt << std::endl ; return s.str();}
                                                     }
                                                     alphabetSet++;
@@ -512,6 +530,7 @@ std::string crackPassword(std::string pass){
                 case 6:
                     alphabetSet=1;
                     while(alphabetSet<11){
+                        QApplication::processEvents();
                                         switch(alphabetSet){
                                             case 1 : alphabet = "-0123456789";
                                                      std::cout << std::endl << std::endl <<"Testing only digits(0123456789) - 10 Characters, please wait";  break;
@@ -540,11 +559,12 @@ std::string crackPassword(std::string pass){
                                         for(digit[2]=0;digit[2]<alphabet.length();digit[2]++)
                                             for(digit[1]=0;digit[1]<alphabet.length();digit[1]++)
                                                 for(digit[0]=1;digit[0]<alphabet.length();digit[0]++){
+                                                    QApplication::processEvents();
                                                     attempt++;
                                                     if(attempt%2500000==0) std::cout << ".";
                                                     test=alphabet[digit[0]];
-                                                    for(int i=1;i<passwordLength;i++)
-                                                        if(alphabet[digit[i]]!='-')test+=alphabet[digit[i]];
+                                                    for(int i=1;i<passwordLength;i++){QApplication::processEvents();
+                                                        if(alphabet[digit[i]]!='-')test+=alphabet[digit[i]];}
                                                     if(pass.compare(test)==0){end_t = clock(); std::stringstream s; s<<"Password cracked: "<<test<<std::endl<<"Completion time: "<<(double)(end_t - start_t)/1000<<" seconds"<<std::endl<< "Number of attempts : " << attempt << std::endl ; return s.str();}
                                                     }
                                                     alphabetSet++;
@@ -553,6 +573,7 @@ std::string crackPassword(std::string pass){
                 case 7:
                     alphabetSet=1;
                     while(alphabetSet<11){
+                        QApplication::processEvents();
                                         switch(alphabetSet){
                                             case 1 : alphabet = "-0123456789";
                                                      std::cout << std::endl << std::endl <<"Testing only digits(0123456789) - 10 Characters, please wait";  break;
@@ -582,11 +603,13 @@ std::string crackPassword(std::string pass){
                                         for(digit[2]=0;digit[2]<alphabet.length();digit[2]++)
                                             for(digit[1]=0;digit[1]<alphabet.length();digit[1]++)
                                                 for(digit[0]=1;digit[0]<alphabet.length();digit[0]++){
+                                                    QApplication::processEvents();
                                                     attempt++;
                                                     if(attempt%2500000==0) std::cout << ".";
                                                     test=alphabet[digit[0]];
-                                                    for(int i=1;i<passwordLength;i++)
-                                                        if(alphabet[digit[i]]!='-')test+=alphabet[digit[i]];
+                                                    for(int i=1;i<passwordLength;i++){
+                                                        QApplication::processEvents();
+                                                        if(alphabet[digit[i]]!='-')test+=alphabet[digit[i]];}
                                                     if(pass.compare(test)==0){end_t = clock(); std::stringstream s; s<<"Password cracked: "<<test<<std::endl<<"Completion time: "<<(double)(end_t - start_t)/1000<<" seconds"<<std::endl<< "Number of attempts : " << attempt << std::endl ; return s.str();}
                                                     }
                                                     alphabetSet++;
@@ -595,6 +618,7 @@ std::string crackPassword(std::string pass){
                 case 8:
                     alphabetSet=1;
                     while(alphabetSet<11){
+                        QApplication::processEvents();
                                         switch(alphabetSet){
                                             case 1 : alphabet = "-0123456789";
                                                      std::cout << std::endl << std::endl <<"Testing only digits(0123456789) - 10 Characters, please wait";  break;
@@ -625,11 +649,12 @@ std::string crackPassword(std::string pass){
                                         for(digit[2]=0;digit[2]<alphabet.length();digit[2]++)
                                             for(digit[1]=0;digit[1]<alphabet.length();digit[1]++)
                                                 for(digit[0]=1;digit[0]<alphabet.length();digit[0]++){
+                                                    QApplication::processEvents();
                                                     attempt++;
                                                     if(attempt%2500000==0) std::cout << ".";
                                                     test=alphabet[digit[0]];
-                                                    for(int i=1;i<passwordLength;i++)
-                                                        if(alphabet[digit[i]]!='-')test+=alphabet[digit[i]];
+                                                    for(int i=1;i<passwordLength;i++){QApplication::processEvents();
+                                                        if(alphabet[digit[i]]!='-')test+=alphabet[digit[i]];}
                                                     if(pass.compare(test)==0){end_t = clock(); std::stringstream s; s<<"Password cracked: "<<test<<std::endl<<"Completion time: "<<(double)(end_t - start_t)/1000<<" seconds"<<std::endl<< "Number of attempts : " << attempt << std::endl ; return s.str();}
                                                     }
                                                     alphabetSet++;
@@ -640,10 +665,12 @@ std::string crackPassword(std::string pass){
             std::cout  << "*** Password length is not " << passwordLength <<  ". Increasing password length! ***";
             std::cout  << std::endl << "*" << std::endl << std::endl;
             passwordLength++;
+            QApplication::processEvents();
     }
     std::cout << std::endl << std::endl << std::endl << ">\n>> CRACKED THE PASSWORD! >>\n>" << std::endl <<  std::endl <<"The password : " << crackPassword(pass) << std::endl;
     std::cout << "The number of attempts : " << attempt << std::endl;
     std::cout << "The time duration  passed : " << (double)(end_t - start_t)/1000 << " seconds" << std::endl << std::endl;
+    QApplication::processEvents();
 }
 
 //End
@@ -676,15 +703,46 @@ std::string textCaesarCipher(std::string text, int s)
     // traverse text
     for (int i=0;i<text.length();i++)
     {
+        char ch = text[i];
+
+            if(ch >= 'a' && ch <= 'z'){
+
+              ch = ch + s;
+
+              if(ch > 'z'){
+
+                ch = ch - 'z' + 'a' - 1;
+
+              }
+
+              result+=ch;
+
+            }
+
+            else if(ch >= 'A' && ch <= 'Z'){
+
+              ch = ch + s;
+
+              if(ch > 'Z'){
+
+                ch = ch - 'Z' + 'A' - 1;
+
+              }
+
+              result=ch;
+
+            }
+
+            else result+=ch;
         // apply transformation to each character
         // Encrypt Uppercase letters
-        if (isupper(text[i]))
-            result += char(int(text[i]+s-65)%26 +65);
-        else if (text[i]==' ')
-            result+=" ";
-    // Encrypt Lowercase letters
-        else
-            result += char(int(text[i]+s-97)%26 +97);
+//        if (isupper(text[i]))
+//            result += char(int(text[i]+s-65)%26 +65);
+//        else if (text[i]==' ')
+//            result+=" ";
+//    // Encrypt Lowercase letters
+//        else
+//            result += char(int(text[i]+s-97)%26 +97);
     }
 
     // Return the resulting string
@@ -700,17 +758,49 @@ std::string caesarCipherText(std::string text, int s)
     {
         // apply transformation to each character
         // Encrypt Uppercase letters
-        if (isupper(text[i]))
-            result += char(int(text[i]-s-65)%26 +65);
-        else if (text[i]==' ')
-            result+=" ";
-    // Encrypt Lowercase letters
-        else
-            result += char(int(text[i]-s-97)%26 +97);
+        char ch = text[i];
+
+        if(ch >= 'a' && ch <= 'z'){
+
+              ch = ch - s;
+
+              if(ch < 'a'){
+
+                ch = ch + 'z' - 'a' + 1;
+
+              }
+
+              result+=ch;
+
+            }
+        else if(ch >= 'A' && ch <= 'Z'){
+
+              ch = ch - s;
+
+              if(ch > 'a'){
+
+                ch = ch + 'Z' - 'A' + 1;
+
+              }
+
+              result+=ch;
+
+            }
+        else result+=text[i];
     }
+
+//        if (isupper(text[i]))
+//            result += char(int(text[i]+s-65)%26 +65);
+//        else if (text[i]==' ')
+//            result+=" ";
+//    // Encrypt Lowercase letters
+//        else
+//            result += char(int(text[i]+s-97)%26 +97);
+//    }
 
     // Return the resulting string
     return result;
+
 }
 
 std::string textAtbash(std::string input){
@@ -931,6 +1021,25 @@ std::string textOctal(std::string input){
     return result;
 }
 
+std::string textDecimal(std::string input){
+    std::string result="";
+    int ascChar;
+    std::stringstream convert;
+
+    for (int i=0;i<input.length();i++)
+        {
+            ascChar = input[i];
+            convert<<ascChar;
+            result=result+convert.str();
+            convert.str("");
+            if(input[i+1]=='\0'){
+                break;
+            }
+            else    result+=" ";
+        }
+    return result;
+}
+
 std::string octalBinary(std::string input){
     std::string result="";
     for(int i=0;i<input.length();i++){
@@ -958,10 +1067,10 @@ std::string octalBinary(std::string input){
     return result;
 }
 
-std::string octalText(std::string input){
-    std::string result1 = octalBinary(input);
+std::string decimalText(std::string input){
+    std::string result1 = textBinary(input);
     std::string result2 = binaryText(result1);
-    return result1;
+    return result2;
 }
 //End
 //Text Encryption Alogrithms
@@ -984,6 +1093,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->textEncryptionFrame->hide();
 
     ui->saveConfirmFrame->hide();
+    ui->passwordCrackedNotif->hide();
 
 
 }
@@ -1229,7 +1339,7 @@ void MainWindow::on_textEncryption_encryptOctal_button_clicked()
 {
     QString textEncryption_octalIn_textEditText =  ui->textEncryption_octalIn_textEdit->toPlainText();
     std::string converted=textEncryption_octalIn_textEditText.toStdString();
-    std::string result=textOctal(converted);
+    std::string result=textDecimal(converted);
     QString resultQt = QString::fromLocal8Bit(result.c_str());
     ui->textEncryption_octalOut_field->setText(resultQt);
 }
@@ -1307,6 +1417,7 @@ void MainWindow::on_textEncryption_decryptCaesarCipher_button_clicked()
     std::string result=caesarCipherText(converted,x);
     QString resultQt = QString::fromLocal8Bit(result.c_str());
     ui->textEncryption_caesarCipherOut_field->setText(resultQt);
+
 }
 
 void MainWindow::on_textEncryption_decryptBinary_button_clicked()
@@ -1324,7 +1435,7 @@ void MainWindow::on_textEncryption_decryptOctal_button_clicked()
 {
     QString textEncryption_octalIn_textEditText =  ui->textEncryption_octalIn_textEdit->toPlainText();
     std::string converted=textEncryption_octalIn_textEditText.toStdString();
-    std::string result=octalText(converted);
+    std::string result=decimalText(converted);
     QString resultQt = QString::fromLocal8Bit(result.c_str());
     ui->textEncryption_octalOut_field->setText(resultQt);
 }
@@ -1338,16 +1449,18 @@ void MainWindow::on_testPassword_enterPassword_button_clicked()
         ui->testPassword_passwordCrackingProgressDisplay->setText("Please enter a password to be tested.");
     }
     else{
-        ui->testPassword_passwordCrackingProgressDisplay->setText("The program may freeze, due to exhaustive algorithm. Please wait.");
+        ui->testPassword_passwordCrackingProgressDisplay->setText("The program may take a while with the brute force due to exhaustive algorithm. This process depends on your CPU speed. Please wait or do other operations while the brute force algorithm runs in the background.");
         std::string result=crackPassword(converted);
         QString resultQt = QString::fromLocal8Bit(result.c_str());
         ui->testPassword_passwordCrackingProgressDisplay->setText("PASSWORD CRACKED\n");
         ui->testPassword_passwordCrackingProgressDisplay->append(resultQt);
+        ui->passwordCrackedNotif->show();
     }
 }
 
 void MainWindow::on_generatePassword_generatePassword_button_clicked()
 {
+    QApplication::processEvents();
     if(ui->generatedPassword_lowerCaseLetters_checkbox->isChecked()==true && ui->generatedPassword_upperCaseLetters_checkbox->isChecked()==false && ui->generatedPassword_numbers_checkbox->isChecked()==false && ui->generatedPassword_specialCharacters_checkbox->isChecked()==false){
         std::string result=lowerCaseRandomString(32);
         QString resultQt = QString::fromLocal8Bit(result.c_str());
@@ -1485,4 +1598,9 @@ void MainWindow::on_logoutButton_clicked()
 void MainWindow::on_saveConfirmOkButton_clicked()
 {
     ui->saveConfirmFrame->hide();
+}
+
+void MainWindow::on_passwordCrackedOkButton_clicked()
+{
+    ui->passwordCrackedNotif->hide();
 }
