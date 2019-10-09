@@ -35,7 +35,7 @@ std::string password="123456seven";
 //csv
 void writeAccounts(std::string input1, std::string input2, std::string input3, std::string input4){
     std::fstream fout;
-    fout.open("accounts.csv", std::ios::out | std::ios::app);
+    fout.open("p2KaLmIg3kB8fZp6Tm2qbi7dss03C42a", std::ios::out | std::ios::app);
             // Insert the data to file
             fout << input1 << ", "
                  << input2 << ", "
@@ -339,13 +339,13 @@ std::string crackPassword(std::string pass){
                     QApplication::processEvents();
                                     switch(alphabetSet){
                                         case 1 : alphabet = "-0123456789";
-                                                 std::cout << std::endl << std::endl <<"Testing only digits(0123456789) - 10 Characters, please wait";  break;
+                                                 break;
                                         case 2 : alphabet = "-abcdefghijklmnopqrstuvwxyz";
-                                                 std::cout << std::endl << std::endl << "Couldn't find the password, increasing the searching level."<< std::endl << std::endl << "Testing only lowercase characters(abcdefghijklmnopqrstuvwxyz) - 26 Characters, please wait";  break;
+                                                 break;
                                         case 3 : alphabet = "-ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-                                                 std::cout << std::endl << std::endl << "Couldn't find the password, increasing the searching level."<< std::endl << std::endl << "Testing only uppercase characters(ABCDEFGHIJKLMNOPQRSTUVWXYZ) - 26 Characters, please wait";  break;
+                                                 break;
                                         case 4 : alphabet = "-@./,'{}#$^!~`[]()&*+=:;% ";
-                                                 std::cout << std::endl << std::endl <<"Testing only special characters - 20 Characters, please wait";  break;
+                                                 break;
                                         }
 
                     for(digit[0]=1;digit[0]<alphabet.length();digit[0]++){
@@ -368,21 +368,21 @@ std::string crackPassword(std::string pass){
                         QApplication::processEvents();
                                         switch(alphabetSet){
                                             case 1 : alphabet = "-0123456789";
-                                                     std::cout << std::endl << std::endl <<"Testing only digits(0123456789) - 10 Characters, please wait";  break;
+                                                     break;
                                             case 2 : alphabet = "-abcdefghijklmnopqrstuvwxyz";
-                                                     std::cout << std::endl << std::endl << "Couldn't find the password, increasing the searching level."<< std::endl << std::endl << "Testing only lowercase characters(abcdefghijklmnopqrstuvwxyz) - 26 Characters, please wait";  break;
+                                                     break;
                                             case 3 : alphabet = "-ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-                                                     std::cout << std::endl << std::endl << "Couldn't find the password, increasing the searching level."<< std::endl << std::endl << "Testing only uppercase characters(ABCDEFGHIJKLMNOPQRSTUVWXYZ) - 26 Characters, please wait";  break;
+                                                     break;
                                             case 4 : alphabet = "-abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-                                                    std::cout << std::endl << std::endl << "Couldn't find the password, increasing the searching level."<< std::endl << std::endl << "Testing only uppercase characters(ABCDEFGHIJKLMNOPQRSTUVWXYZ) - 26 Characters, please wait";  break;
+                                                     break;
                                             case 5 : alphabet = "-@./,'{}#$^!~`[]()&*+=:;% ";
-                                                     std::cout << std::endl << std::endl <<"Testing only special characters - 17 Characters, please wait";  break;
+                                                     break;
                                             case 6 : alphabet = "-0123456789abcdefghijklmnopqrstuvwxyz";
-                                                     std::cout << std::endl << std::endl << "Couldn't find the password, increasing the searching level."<< std::endl << std::endl << "Testing lowercase characters and numbers(0123456789abcdefghijklmnopqrstuvwxyz) - 36 Characters, please wait";  break;
+                                                     break;
                                             case 7 : alphabet = "-0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-                                                    std::cout << std::endl << std::endl << "Couldn't find the password, increasing the searching level."<< std::endl << std::endl << "Testing uppercase characters and numbers(0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ) - 36 Characters, please wait";  break;
+                                                     break;
                                             case 8 : alphabet = "-0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@./,'{}#$^!~`[]()&*+=:;% ";
-                                                     std::cout << std::endl << std::endl <<"Testing only special characters - 20 Characters, please wait";  break;
+                                                     break;
                                             }
 
 
@@ -407,25 +407,25 @@ std::string crackPassword(std::string pass){
                         QApplication::processEvents();
                                         switch(alphabetSet){
                                             case 1 : alphabet = "-0123456789";
-                                                     std::cout << std::endl << std::endl <<"Testing only digits(0123456789) - 10 Characters, please wait";  break;
+                                                     break;
                                             case 2 : alphabet = "-abcdefghijklmnopqrstuvwxyz";
-                                                     std::cout << std::endl << std::endl << "Couldn't find the password, increasing the searching level."<< std::endl << std::endl << "Testing only lowercase characters(abcdefghijklmnopqrstuvwxyz) - 26 Characters, please wait";  break;
+                                                     break;
                                             case 3 : alphabet = "-ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-                                                     std::cout << std::endl << std::endl << "Couldn't find the password, increasing the searching level."<< std::endl << std::endl << "Testing only uppercase characters(ABCDEFGHIJKLMNOPQRSTUVWXYZ) - 26 Characters, please wait";  break;
+                                                     break;
                                             case 4 : alphabet = "-abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-                                                    std::cout << std::endl << std::endl << "Couldn't find the password, increasing the searching level."<< std::endl << std::endl << "Testing only uppercase characters(ABCDEFGHIJKLMNOPQRSTUVWXYZ) - 26 Characters, please wait";  break;
+                                                     break;
                                             case 5 : alphabet = "-@./,'{}#$^!~`[]()&*+=:;% ";
-                                                     std::cout << std::endl << std::endl <<"Testing only special characters - 17 Characters, please wait";  break;
+                                                     break;
                                             case 6 : alphabet = "-0123456789abcdefghijklmnopqrstuvwxyz";
-                                                     std::cout << std::endl << std::endl << "Couldn't find the password, increasing the searching level."<< std::endl << std::endl << "Testing lowercase characters and numbers(0123456789abcdefghijklmnopqrstuvwxyz) - 36 Characters, please wait";  break;
+                                                     break;
                                             case 7 : alphabet = "-0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-                                                     std::cout << std::endl << std::endl << "Couldn't find the password, increasing the searching level."<< std::endl << std::endl << "Testing uppercase characters and numbers(0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ) - 36 Characters, please wait";  break;
+                                                     break;
                                             case 8 : alphabet = "-abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@./,'{}#$^!~`[]()&*+=:;% ";
-                                                     std::cout << std::endl << std::endl << "Couldn't find the password, increasing the searching level."<< std::endl << std::endl << "Testing lowercase, uppercase characters(abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ) - 52 Characters, please wait";  break;
+                                                     break;
                                             case 9 : alphabet = "-0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-                                                     std::cout << std::endl << std::endl << "Couldn't find the password, increasing the searching level."<< std::endl << std::endl << "Testing lowercase, uppercase characters and numbers(0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ) - 62 Characters, please wait";  break;
+                                                     break;
                                             case 10 : alphabet = "-0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@./,'{}#$^!~`[]()&*+=:;% ";
-                                                     std::cout << std::endl << std::endl <<"Testing only special characters - 20 Characters, please wait";  break;
+                                                     break;
                                         }
                                         for(digit[2]=0;digit[2]<alphabet.length();digit[2]++)
                                             for(digit[1]=0;digit[1]<alphabet.length();digit[1]++)
@@ -448,25 +448,25 @@ std::string crackPassword(std::string pass){
                         QApplication::processEvents();
                                         switch(alphabetSet){
                                             case 1 : alphabet = "-0123456789";
-                                                     std::cout << std::endl << std::endl <<"Testing only digits(0123456789) - 10 Characters, please wait";  break;
+                                                     break;
                                             case 2 : alphabet = "-abcdefghijklmnopqrstuvwxyz";
-                                                     std::cout << std::endl << std::endl << "Couldn't find the password, increasing the searching level."<< std::endl << std::endl << "Testing only lowercase characters(abcdefghijklmnopqrstuvwxyz) - 26 Characters, please wait";  break;
+                                                     break;
                                             case 3 : alphabet = "-ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-                                                     std::cout << std::endl << std::endl << "Couldn't find the password, increasing the searching level."<< std::endl << std::endl << "Testing only uppercase characters(ABCDEFGHIJKLMNOPQRSTUVWXYZ) - 26 Characters, please wait";  break;
+                                                     break;
                                             case 4 : alphabet = "-abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-                                                    std::cout << std::endl << std::endl << "Couldn't find the password, increasing the searching level."<< std::endl << std::endl << "Testing only uppercase characters(ABCDEFGHIJKLMNOPQRSTUVWXYZ) - 26 Characters, please wait";  break;
+                                                     break;
                                             case 5 : alphabet = "-@./,'{}#$^!~`[]()&*+=:;% ";
-                                                     std::cout << std::endl << std::endl <<"Testing only special characters - 17 Characters, please wait";  break;
+                                                     break;
                                             case 6 : alphabet = "-0123456789abcdefghijklmnopqrstuvwxyz";
-                                                     std::cout << std::endl << std::endl << "Couldn't find the password, increasing the searching level."<< std::endl << std::endl << "Testing lowercase characters and numbers(0123456789abcdefghijklmnopqrstuvwxyz) - 36 Characters, please wait";  break;
+                                                     break;
                                             case 7 : alphabet = "-0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-                                                     std::cout << std::endl << std::endl << "Couldn't find the password, increasing the searching level."<< std::endl << std::endl << "Testing uppercase characters and numbers(0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ) - 36 Characters, please wait";  break;
+                                                     break;
                                             case 8 : alphabet = "-abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@./,'{}#$^!~`[]()&*+=:;% ";
-                                                     std::cout << std::endl << std::endl << "Couldn't find the password, increasing the searching level."<< std::endl << std::endl << "Testing lowercase, uppercase characters(abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ) - 52 Characters, please wait";  break;
+                                                     break;
                                             case 9 : alphabet = "-0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-                                                     std::cout << std::endl << std::endl << "Couldn't find the password, increasing the searching level."<< std::endl << std::endl << "Testing lowercase, uppercase characters and numbers(0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ) - 62 Characters, please wait";  break;
+                                                     break;
                                             case 10 : alphabet = "-0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@./,'{}#$^!~`[]()&*+=:;% ";
-                                                     std::cout << std::endl << std::endl <<"Testing only special characters - 20 Characters, please wait";  break;
+                                                     break;
                                         }
                                     for(digit[3]=0;digit[3]<alphabet.length();digit[3]++)
                                         for(digit[2]=0;digit[2]<alphabet.length();digit[2]++)
@@ -488,28 +488,28 @@ std::string crackPassword(std::string pass){
                     alphabetSet=1;
                     while(alphabetSet<11){
                         QApplication::processEvents();
-                                        switch(alphabetSet){
-                                            case 1 : alphabet = "-0123456789";
-                                                     std::cout << std::endl << std::endl <<"Testing only digits(0123456789) - 10 Characters, please wait";  break;
-                                            case 2 : alphabet = "-abcdefghijklmnopqrstuvwxyz";
-                                                     std::cout << std::endl << std::endl << "Couldn't find the password, increasing the searching level."<< std::endl << std::endl << "Testing only lowercase characters(abcdefghijklmnopqrstuvwxyz) - 26 Characters, please wait";  break;
-                                            case 3 : alphabet = "-ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-                                                     std::cout << std::endl << std::endl << "Couldn't find the password, increasing the searching level."<< std::endl << std::endl << "Testing only uppercase characters(ABCDEFGHIJKLMNOPQRSTUVWXYZ) - 26 Characters, please wait";  break;
-                                            case 4 : alphabet = "-abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-                                                    std::cout << std::endl << std::endl << "Couldn't find the password, increasing the searching level."<< std::endl << std::endl << "Testing only uppercase characters(ABCDEFGHIJKLMNOPQRSTUVWXYZ) - 26 Characters, please wait";  break;
-                                            case 5 : alphabet = "-@./,'{}#$^!~`[]()&*+=:;% ";
-                                                     std::cout << std::endl << std::endl <<"Testing only special characters - 17 Characters, please wait";  break;
-                                            case 6 : alphabet = "-0123456789abcdefghijklmnopqrstuvwxyz";
-                                                     std::cout << std::endl << std::endl << "Couldn't find the password, increasing the searching level."<< std::endl << std::endl << "Testing lowercase characters and numbers(0123456789abcdefghijklmnopqrstuvwxyz) - 36 Characters, please wait";  break;
-                                            case 7 : alphabet = "-0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-                                                     std::cout << std::endl << std::endl << "Couldn't find the password, increasing the searching level."<< std::endl << std::endl << "Testing uppercase characters and numbers(0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ) - 36 Characters, please wait";  break;
-                                            case 8 : alphabet = "-abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@./,'{}#$^!~`[]()&*+=:;% ";
-                                                     std::cout << std::endl << std::endl << "Couldn't find the password, increasing the searching level."<< std::endl << std::endl << "Testing lowercase, uppercase characters(abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ) - 52 Characters, please wait";  break;
-                                            case 9 : alphabet = "-0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-                                                     std::cout << std::endl << std::endl << "Couldn't find the password, increasing the searching level."<< std::endl << std::endl << "Testing lowercase, uppercase characters and numbers(0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ) - 62 Characters, please wait";  break;
-                                            case 10 : alphabet = "-0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@./,'{}#$^!~`[]()&*+=:;% ";
-                                                     std::cout << std::endl << std::endl <<"Testing only special characters - 20 Characters, please wait";  break;
-                                        }
+                        switch(alphabetSet){
+                            case 1 : alphabet = "-0123456789";
+                                     break;
+                            case 2 : alphabet = "-abcdefghijklmnopqrstuvwxyz";
+                                     break;
+                            case 3 : alphabet = "-ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                                     break;
+                            case 4 : alphabet = "-abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                                     break;
+                            case 5 : alphabet = "-@./,'{}#$^!~`[]()&*+=:;% ";
+                                     break;
+                            case 6 : alphabet = "-0123456789abcdefghijklmnopqrstuvwxyz";
+                                     break;
+                            case 7 : alphabet = "-0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                                     break;
+                            case 8 : alphabet = "-abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@./,'{}#$^!~`[]()&*+=:;% ";
+                                     break;
+                            case 9 : alphabet = "-0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                                     break;
+                            case 10 : alphabet = "-0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@./,'{}#$^!~`[]()&*+=:;% ";
+                                     break;
+                        }
                                 for(digit[4]=0;digit[4]<alphabet.length();digit[4]++)
                                     for(digit[3]=0;digit[3]<alphabet.length();digit[3]++)
                                         for(digit[2]=0;digit[2]<alphabet.length();digit[2]++)
@@ -531,28 +531,28 @@ std::string crackPassword(std::string pass){
                     alphabetSet=1;
                     while(alphabetSet<11){
                         QApplication::processEvents();
-                                        switch(alphabetSet){
-                                            case 1 : alphabet = "-0123456789";
-                                                     std::cout << std::endl << std::endl <<"Testing only digits(0123456789) - 10 Characters, please wait";  break;
-                                            case 2 : alphabet = "-abcdefghijklmnopqrstuvwxyz";
-                                                     std::cout << std::endl << std::endl << "Couldn't find the password, increasing the searching level."<< std::endl << std::endl << "Testing only lowercase characters(abcdefghijklmnopqrstuvwxyz) - 26 Characters, please wait";  break;
-                                            case 3 : alphabet = "-ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-                                                     std::cout << std::endl << std::endl << "Couldn't find the password, increasing the searching level."<< std::endl << std::endl << "Testing only uppercase characters(ABCDEFGHIJKLMNOPQRSTUVWXYZ) - 26 Characters, please wait";  break;
-                                            case 4 : alphabet = "-abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-                                                    std::cout << std::endl << std::endl << "Couldn't find the password, increasing the searching level."<< std::endl << std::endl << "Testing only uppercase characters(ABCDEFGHIJKLMNOPQRSTUVWXYZ) - 26 Characters, please wait";  break;
-                                            case 5 : alphabet = "-@./,'{}#$^!~`[]()&*+=:;% ";
-                                                     std::cout << std::endl << std::endl <<"Testing only special characters - 17 Characters, please wait";  break;
-                                            case 6 : alphabet = "-0123456789abcdefghijklmnopqrstuvwxyz";
-                                                     std::cout << std::endl << std::endl << "Couldn't find the password, increasing the searching level."<< std::endl << std::endl << "Testing lowercase characters and numbers(0123456789abcdefghijklmnopqrstuvwxyz) - 36 Characters, please wait";  break;
-                                            case 7 : alphabet = "-0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-                                                     std::cout << std::endl << std::endl << "Couldn't find the password, increasing the searching level."<< std::endl << std::endl << "Testing uppercase characters and numbers(0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ) - 36 Characters, please wait";  break;
-                                            case 8 : alphabet = "-abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@./,'{}#$^!~`[]()&*+=:;% ";
-                                                     std::cout << std::endl << std::endl << "Couldn't find the password, increasing the searching level."<< std::endl << std::endl << "Testing lowercase, uppercase characters(abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ) - 52 Characters, please wait";  break;
-                                            case 9 : alphabet = "-0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-                                                     std::cout << std::endl << std::endl << "Couldn't find the password, increasing the searching level."<< std::endl << std::endl << "Testing lowercase, uppercase characters and numbers(0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ) - 62 Characters, please wait";  break;
-                                            case 10 : alphabet = "-0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@./,'{}#$^!~`[]()&*+=:;% ";
-                                                     std::cout << std::endl << std::endl <<"Testing only special characters - 20 Characters, please wait";  break;
-                                        }
+                        switch(alphabetSet){
+                            case 1 : alphabet = "-0123456789";
+                                     break;
+                            case 2 : alphabet = "-abcdefghijklmnopqrstuvwxyz";
+                                     break;
+                            case 3 : alphabet = "-ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                                     break;
+                            case 4 : alphabet = "-abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                                     break;
+                            case 5 : alphabet = "-@./,'{}#$^!~`[]()&*+=:;% ";
+                                     break;
+                            case 6 : alphabet = "-0123456789abcdefghijklmnopqrstuvwxyz";
+                                     break;
+                            case 7 : alphabet = "-0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                                     break;
+                            case 8 : alphabet = "-abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@./,'{}#$^!~`[]()&*+=:;% ";
+                                     break;
+                            case 9 : alphabet = "-0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                                     break;
+                            case 10 : alphabet = "-0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@./,'{}#$^!~`[]()&*+=:;% ";
+                                     break;
+                        }
                             for(digit[5]=0;digit[5]<alphabet.length();digit[5]++)
                                 for(digit[4]=0;digit[4]<alphabet.length();digit[4]++)
                                     for(digit[3]=0;digit[3]<alphabet.length();digit[3]++)
@@ -574,28 +574,28 @@ std::string crackPassword(std::string pass){
                     alphabetSet=1;
                     while(alphabetSet<11){
                         QApplication::processEvents();
-                                        switch(alphabetSet){
-                                            case 1 : alphabet = "-0123456789";
-                                                     std::cout << std::endl << std::endl <<"Testing only digits(0123456789) - 10 Characters, please wait";  break;
-                                            case 2 : alphabet = "-abcdefghijklmnopqrstuvwxyz";
-                                                     std::cout << std::endl << std::endl << "Couldn't find the password, increasing the searching level."<< std::endl << std::endl << "Testing only lowercase characters(abcdefghijklmnopqrstuvwxyz) - 26 Characters, please wait";  break;
-                                            case 3 : alphabet = "-ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-                                                     std::cout << std::endl << std::endl << "Couldn't find the password, increasing the searching level."<< std::endl << std::endl << "Testing only uppercase characters(ABCDEFGHIJKLMNOPQRSTUVWXYZ) - 26 Characters, please wait";  break;
-                                            case 4 : alphabet = "-abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-                                                    std::cout << std::endl << std::endl << "Couldn't find the password, increasing the searching level."<< std::endl << std::endl << "Testing only uppercase characters(ABCDEFGHIJKLMNOPQRSTUVWXYZ) - 26 Characters, please wait";  break;
-                                            case 5 : alphabet = "-@./,'{}#$^!~`[]()&*+=:;% ";
-                                                     std::cout << std::endl << std::endl <<"Testing only special characters - 17 Characters, please wait";  break;
-                                            case 6 : alphabet = "-0123456789abcdefghijklmnopqrstuvwxyz";
-                                                     std::cout << std::endl << std::endl << "Couldn't find the password, increasing the searching level."<< std::endl << std::endl << "Testing lowercase characters and numbers(0123456789abcdefghijklmnopqrstuvwxyz) - 36 Characters, please wait";  break;
-                                            case 7 : alphabet = "-0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-                                                     std::cout << std::endl << std::endl << "Couldn't find the password, increasing the searching level."<< std::endl << std::endl << "Testing uppercase characters and numbers(0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ) - 36 Characters, please wait";  break;
-                                            case 8 : alphabet = "-abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@./,'{}#$^!~`[]()&*+=:;% ";
-                                                     std::cout << std::endl << std::endl << "Couldn't find the password, increasing the searching level."<< std::endl << std::endl << "Testing lowercase, uppercase characters(abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ) - 52 Characters, please wait";  break;
-                                            case 9 : alphabet = "-0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-                                                     std::cout << std::endl << std::endl << "Couldn't find the password, increasing the searching level."<< std::endl << std::endl << "Testing lowercase, uppercase characters and numbers(0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ) - 62 Characters, please wait";  break;
-                                            case 10 : alphabet = "-0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@./,'{}#$^!~`[]()&*+=:;% ";
-                                                     std::cout << std::endl << std::endl <<"Testing only special characters - 20 Characters, please wait";  break;
-                                        }
+                        switch(alphabetSet){
+                            case 1 : alphabet = "-0123456789";
+                                     break;
+                            case 2 : alphabet = "-abcdefghijklmnopqrstuvwxyz";
+                                     break;
+                            case 3 : alphabet = "-ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                                     break;
+                            case 4 : alphabet = "-abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                                     break;
+                            case 5 : alphabet = "-@./,'{}#$^!~`[]()&*+=:;% ";
+                                     break;
+                            case 6 : alphabet = "-0123456789abcdefghijklmnopqrstuvwxyz";
+                                     break;
+                            case 7 : alphabet = "-0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                                     break;
+                            case 8 : alphabet = "-abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@./,'{}#$^!~`[]()&*+=:;% ";
+                                     break;
+                            case 9 : alphabet = "-0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                                     break;
+                            case 10 : alphabet = "-0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@./,'{}#$^!~`[]()&*+=:;% ";
+                                     break;
+                        }
                         for(digit[6]=0;digit[6]<alphabet.length();digit[6]++)
                             for(digit[5]=0;digit[5]<alphabet.length();digit[5]++)
                                 for(digit[4]=0;digit[4]<alphabet.length();digit[4]++)
@@ -619,28 +619,28 @@ std::string crackPassword(std::string pass){
                     alphabetSet=1;
                     while(alphabetSet<11){
                         QApplication::processEvents();
-                                        switch(alphabetSet){
-                                            case 1 : alphabet = "-0123456789";
-                                                     std::cout << std::endl << std::endl <<"Testing only digits(0123456789) - 10 Characters, please wait";  break;
-                                            case 2 : alphabet = "-abcdefghijklmnopqrstuvwxyz";
-                                                     std::cout << std::endl << std::endl << "Couldn't find the password, increasing the searching level."<< std::endl << std::endl << "Testing only lowercase characters(abcdefghijklmnopqrstuvwxyz) - 26 Characters, please wait";  break;
-                                            case 3 : alphabet = "-ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-                                                     std::cout << std::endl << std::endl << "Couldn't find the password, increasing the searching level."<< std::endl << std::endl << "Testing only uppercase characters(ABCDEFGHIJKLMNOPQRSTUVWXYZ) - 26 Characters, please wait";  break;
-                                            case 4 : alphabet = "-abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-                                                    std::cout << std::endl << std::endl << "Couldn't find the password, increasing the searching level."<< std::endl << std::endl << "Testing only uppercase characters(ABCDEFGHIJKLMNOPQRSTUVWXYZ) - 26 Characters, please wait";  break;
-                                            case 5 : alphabet = "-@./,'{}#$^!~`[]()&*+=:;% ";
-                                                     std::cout << std::endl << std::endl <<"Testing only special characters - 17 Characters, please wait";  break;
-                                            case 6 : alphabet = "-0123456789abcdefghijklmnopqrstuvwxyz";
-                                                     std::cout << std::endl << std::endl << "Couldn't find the password, increasing the searching level."<< std::endl << std::endl << "Testing lowercase characters and numbers(0123456789abcdefghijklmnopqrstuvwxyz) - 36 Characters, please wait";  break;
-                                            case 7 : alphabet = "-0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-                                                     std::cout << std::endl << std::endl << "Couldn't find the password, increasing the searching level."<< std::endl << std::endl << "Testing uppercase characters and numbers(0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ) - 36 Characters, please wait";  break;
-                                            case 8 : alphabet = "-abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@./,'{}#$^!~`[]()&*+=:;% ";
-                                                     std::cout << std::endl << std::endl << "Couldn't find the password, increasing the searching level."<< std::endl << std::endl << "Testing lowercase, uppercase characters(abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ) - 52 Characters, please wait";  break;
-                                            case 9 : alphabet = "-0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-                                                     std::cout << std::endl << std::endl << "Couldn't find the password, increasing the searching level."<< std::endl << std::endl << "Testing lowercase, uppercase characters and numbers(0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ) - 62 Characters, please wait";  break;
-                                            case 10 : alphabet = "-0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@./,'{}#$^!~`[]()&*+=:;% ";
-                                                     std::cout << std::endl << std::endl <<"Testing only special characters - 20 Characters, please wait";  break;
-                                        }
+                        switch(alphabetSet){
+                            case 1 : alphabet = "-0123456789";
+                                     break;
+                            case 2 : alphabet = "-abcdefghijklmnopqrstuvwxyz";
+                                     break;
+                            case 3 : alphabet = "-ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                                     break;
+                            case 4 : alphabet = "-abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                                     break;
+                            case 5 : alphabet = "-@./,'{}#$^!~`[]()&*+=:;% ";
+                                     break;
+                            case 6 : alphabet = "-0123456789abcdefghijklmnopqrstuvwxyz";
+                                     break;
+                            case 7 : alphabet = "-0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                                     break;
+                            case 8 : alphabet = "-abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@./,'{}#$^!~`[]()&*+=:;% ";
+                                     break;
+                            case 9 : alphabet = "-0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                                     break;
+                            case 10 : alphabet = "-0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@./,'{}#$^!~`[]()&*+=:;% ";
+                                     break;
+                        }
                     for(digit[7]=0;digit[7]<alphabet.length();digit[7]++)
                         for(digit[6]=0;digit[6]<alphabet.length();digit[6]++)
                             for(digit[5]=0;digit[5]<alphabet.length();digit[5]++)
@@ -661,16 +661,9 @@ std::string crackPassword(std::string pass){
                     }
                     break;
             }
-            std::cout  << std::endl << std::endl << std::endl << std::endl << "*" << std::endl;
-            std::cout  << "*** Password length is not " << passwordLength <<  ". Increasing password length! ***";
-            std::cout  << std::endl << "*" << std::endl << std::endl;
             passwordLength++;
             QApplication::processEvents();
     }
-    std::cout << std::endl << std::endl << std::endl << ">\n>> CRACKED THE PASSWORD! >>\n>" << std::endl <<  std::endl <<"The password : " << crackPassword(pass) << std::endl;
-    std::cout << "The number of attempts : " << attempt << std::endl;
-    std::cout << "The time duration  passed : " << (double)(end_t - start_t)/1000 << " seconds" << std::endl << std::endl;
-    QApplication::processEvents();
 }
 
 //End
@@ -1070,9 +1063,128 @@ std::string octalBinary(std::string input){
 }
 
 std::string decimalText(std::string input){
-    std::string result1 = textBinary(input);
-    std::string result2 = binaryText(result1);
-    return result2;
+        
+        std::string result="";
+        int str_length = input.length(); 
+      
+        // create an array with size as string 
+        // length and initialize with 0 
+        int arr[str_length] = {0};
+        
+        int j = 0, i, y=0;
+      
+        // Traverse the string 
+        for (i = 0; input[i] != '\0'; i++) { 
+      
+            // if str[i] is ', ' then split 
+            if (input[i] == ' ') { 
+      
+                // Increment j to point to next 
+                // array location 
+                j++; 
+            } 
+            else { 
+      
+                // subtract str[i] by 48 to convert it to int 
+                // Generate number by multiplying 10 and adding 
+                // (int)(str[i]) 
+                arr[j] = arr[j] * 10 + (input[i] - 48);
+                y++;
+            } 
+        } 
+      
+        for (int x=0; x<=j  ; x++){
+            switch(arr[x])
+            {
+                case 90: result+="Z";	break;
+                case 122: result+="z";	break;
+                case 89: result+="Y";	break;
+                case 121: result+="y";	break;
+                case 88: result+="X";	break;
+                case 120: result+="x";	break;
+                case 87: result+="W";	break;
+                case 119: result+="w";	break;
+                case 86: result+="V";	break;
+                case 118: result+="v";	break;
+                case 85: result+="U";	break;
+                case 117: result+="u";	break;
+                case 84: result+="T";	break;
+                case 116: result+="t";	break;
+                case 83: result+="S";	break;
+                case 115: result+="s";	break;
+                case 82: result+="R";	break;
+                case 114: result+="r";	break;
+                case 81: result+="Q";	break;
+                case 113: result+="q";	break;
+                case 80: result+="P";	break;
+                case 112: result+="p";	break;
+                case 79: result+="O";	break;
+                case 111: result+="o";	break;
+                case 78: result+="N";	break;
+                case 110: result+="n";	break;
+                case 77: result+="M";	break;
+                case 109: result+="m";	break;
+                case 76: result+="L";	break;
+                case 108: result+="l";	break;
+                case 75: result+="K";	break;
+                case 107: result+="k";	break;
+                case 74: result+="J";	break;
+                case 106: result+="j";	break;
+                case 73: result+="I";	break;
+                case 105: result+="i";	break;
+                case 72: result+="H";	break;
+                case 104: result+="h";	break;
+                case 71: result+="G";	break;
+                case 103: result+="g";	break;
+                case 70: result+="F";	break;
+                case 102: result+="f";	break;
+                case 69: result+="E";	break;
+                case 101: result+="e";	break;
+                case 68: result+="D";	break;
+                case 100: result+="d";	break;
+                case 67: result+="C";	break;
+                case 99: result+="c";	break;
+                case 66: result+="B";	break;
+                case 98: result+="b";	break;
+                case 65: result+="A";	break;
+                case 97: result+="a";	break;
+                case 32: result+=" ";	break;
+                            case 33: result+="!";	break;
+                            case 64: result+="@";	break;
+                            case 46: result+=".";	break;
+                            case 44: result+=",";	break;
+                            case 35: result+="#";	break;
+                            case 38: result+="&";	break;
+                            case 58: result+=":";	break;
+                            case 59: result+=";";	break;
+                            case 34: result+='"';	break;
+                            case 41: result+=")";	break;
+                            case 40: result+="(";	break;
+                            case 63: result+="?";	break;
+                            case 43: result+="+";	break;
+                            case 45: result+="-";	break;
+                            case 42: result+="*";	break;
+                            case 47: result+="/";	break;
+                            case 61: result+="=";	break;
+                            case 91: result+="[";	break;
+                            case 93: result+="]";	break;
+                            case 123: result+="{";	break;
+                            case 125: result+="}";	break;
+                case 48: result+="0";	break;
+                case 49: result+="1";	break;
+                case 50: result+="2";	break;
+                case 51: result+="3";	break;
+                case 52: result+="4";	break;
+                case 53: result+="5";	break;
+                case 54: result+="6";	break;
+                case 55: result+="7";	break;
+                case 56: result+="8";	break;
+                case 57: result+="9";	break;
+
+                default: result+=input[i];
+            }
+        }
+        return result;
 }
 //End
 //Text Encryption Alogrithms
@@ -1181,7 +1293,7 @@ void MainWindow::on_viewPasswords_enterPassword_button_clicked()
     //    ui->login_enterPassword_field->
 
 //C:/Users/E1-432 PC/Documents/build-PasswordApplication-Desktop_Qt_5_13_0_MinGW_32_bit-Debug/
-        QFile file("accounts.csv");
+        QFile file("p2KaLmIg3kB8fZp6Tm2qbi7dss03C42a");
         if (!file.open(QFile::ReadOnly | QFile::Text)){
             qDebug()<<"File not exists";
         }
