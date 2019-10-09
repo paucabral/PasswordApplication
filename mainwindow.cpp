@@ -672,128 +672,70 @@ std::string crackPassword(std::string pass){
 //Text Encryption Algorithms
 //Start
 
-std::string textROT13(std::string source)
+std::string textROT13(std::string text)
 {
-    std::string transformed;
-    for (size_t i = 0; i < source.size(); ++i) {
-        if (isalpha(source[i])) {
-            if ((tolower(source[i]) - 'a') < 14)
-                transformed.append(1, source[i] + 13);
-            else
-                transformed.append(1, source[i] - 13);
-        } else {
-            transformed.append(1, source[i]);
-        }
-    }
-    return transformed;
+    std::transform(
+            begin(text), end(text), begin(text),
+            [] (char c) -> char {
+                if (not std::isalpha(c))
+                    return c;
+
+                char const pivot = std::isupper(c) ? 'A' : 'a';
+                return (c - pivot + 13) % 26 + pivot;
+            });
+        return text;
 }
 
 
 std::string textCaesarCipher(std::string text, int s)
 {
     std::string result = "";
-
-    // traverse text
     for (int i=0;i<text.length();i++)
     {
         char ch = text[i];
-
             if(ch >= 'a' && ch <= 'z'){
-
               ch = ch + s;
-
               if(ch > 'z'){
-
                 ch = ch - 'z' + 'a' - 1;
-
               }
-
               result+=ch;
-
             }
-
             else if(ch >= 'A' && ch <= 'Z'){
-
               ch = ch + s;
-
               if(ch > 'Z'){
-
                 ch = ch - 'Z' + 'A' - 1;
-
               }
-
               result+=ch;
-
             }
-
             else {
                 result+=text[i];
             }
-        // apply transformation to each character
-        // Encrypt Uppercase letters
-//        if (isupper(text[i]))
-//            result += char(int(text[i]+s-65)%26 +65);
-//        else if (text[i]==' ')
-//            result+=" ";
-//    // Encrypt Lowercase letters
-//        else
-//            result += char(int(text[i]+s-97)%26 +97);
     }
-
-    // Return the resulting string
     return result;
 }
 
 std::string caesarCipherText(std::string text, int s)
 {
     std::string result = "";
-
-    // traverse text
     for (int i=0;i<text.length();i++)
     {
-        // apply transformation to each character
-        // Encrypt Uppercase letters
         char ch = text[i];
-
         if(ch >= 'a' && ch <= 'z'){
-
               ch = ch - s;
-
               if(ch < 'a'){
-
                 ch = ch + 'z' - 'a' + 1;
-
               }
-
               result+=ch;
-
             }
         else if(ch >= 'A' && ch <= 'Z'){
-
               ch = ch - s;
-
               if(ch > 'a'){
-
                 ch = ch + 'Z' - 'A' + 1;
-
               }
-
               result+=ch;
-
             }
         else result+=text[i];
     }
-
-//        if (isupper(text[i]))
-//            result += char(int(text[i]+s-65)%26 +65);
-//        else if (text[i]==' ')
-//            result+=" ";
-//    // Encrypt Lowercase letters
-//        else
-//            result += char(int(text[i]+s-97)%26 +97);
-//    }
-
-    // Return the resulting string
     return result;
 
 }
@@ -1072,27 +1014,19 @@ std::string decimalText(std::string input){
         int arr[str_length] = {0};
         
         int j = 0, i, y=0;
-      
-        // Traverse the string 
         for (i = 0; input[i] != '\0'; i++) { 
       
-            // if str[i] is ', ' then split 
+            // if str[i] is an empty space then split
             if (input[i] == ' ') { 
-      
-                // Increment j to point to next 
-                // array location 
                 j++; 
             } 
             else { 
-      
-                // subtract str[i] by 48 to convert it to int 
-                // Generate number by multiplying 10 and adding 
-                // (int)(str[i]) 
                 arr[j] = arr[j] * 10 + (input[i] - 48);
                 y++;
             } 
         } 
       
+        //Test cases for each decimal entry in the array
         for (int x=0; x<=j  ; x++){
             switch(arr[x])
             {

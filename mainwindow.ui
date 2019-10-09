@@ -23,7 +23,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Password Manager</string>
+   <string>Password Management System</string>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color:#2A3439;</string>
