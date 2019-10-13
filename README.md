@@ -25,6 +25,7 @@ This program is written in C++ and uses open-source licensed Qt Framework for GU
 <ul>
 <li>Qt Creator 4.2 (Community version)</li>
 <li>MingW 5.XX</li>
+</ul>
 
 </br>
 <p><b>NOTE:</b> Files present on this repository are the ones essential for compiling and building a debug version. An offical build is yet to be released.</p>
