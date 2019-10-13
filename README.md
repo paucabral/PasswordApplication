@@ -1,7 +1,7 @@
 <h1> Password Management System </h1>
 
 <h3>About</h3>
-<p>This system was developed in compliance for the course, CPE 010 - Data Structures and Algorithms, as a final project. The 
+<p>This system was developed in compliance for the course, CPE 010 - Data Structures and Algorithms under the Computer Engineering Program of the Technological Institue of the Philippines - Quezon City, as a final project. The 
 Password Management System is an application built to aid users in managing their account authentication credentials. 
 This program is written in C++ and uses open-source licensed Qt Framework for GUI.</p>
 
