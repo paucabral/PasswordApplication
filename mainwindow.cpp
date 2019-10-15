@@ -321,12 +321,14 @@ std::string numericSpecialCharRandomString(int n)
 
 #include <ctime>
 
-std::string crackPassword(std::string pass);
-long long int attempt;
-clock_t start_t, end_t;
+//std::string crackPassword(std::string pass);
+//long long int attempt;
+//clock_t start_t, end_t;
 
 
 std::string crackPassword(std::string pass){
+    long long int attempt=0;
+    clock_t start_t, end_t;
     int digit[7],alphabetSet=1,passwordLength=1;
     start_t = clock();
     QApplication::processEvents();
@@ -665,7 +667,6 @@ std::string crackPassword(std::string pass){
             QApplication::processEvents();
     }
 }
-
 //End
 
 
